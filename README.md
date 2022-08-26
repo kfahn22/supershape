@@ -17,10 +17,10 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 <img class="img" src="assets/super7.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
+<img class="img" src="assets/super4.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-    <img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
+    <img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 <img class="img" src="assets/supershape_stroke.jpg" alt="Supershape with stroke" style=" display: block;
@@ -40,7 +40,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
   - [Inigo Quilez website] https://iquilezles.org
   - [Inigo Quilez youtube channel] https://www.youtube.com/c/InigoQuilez
 
- Jamie Wong has a nice article on Ray Marching and Signed Distance Functyions.
+ Jamie Wong has a great article on Ray Marching and Signed Distance Functyions.
  [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 
  Here are some wonderful tutorials by Daniel Shiffman: 
