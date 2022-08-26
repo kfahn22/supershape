@@ -14,16 +14,16 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
   These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. 
 
-<img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
+<img class="img" src="assets/super7.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 <img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-    <img class="img" src="assets/super2.jpg" alt="Supershape" style=" display: block;
+    <img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/super_shape.jpg" alt="Supershape with stroke" style=" display: block;
+<img class="img" src="assets/supershape_stroke.jpg" alt="Supershape with stroke" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 

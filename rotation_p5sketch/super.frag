@@ -150,24 +150,6 @@ float sdBox( vec2 uv, vec2 b )
 //     return length(uv)*sign(uv.x);
 // }
 
-// 3D Koch curve ported from The Art of Code
-// Several different variations
-
-// float GetDistKoch(vec3 p) {
-//    float d;
-  
-//   // rotation
-//      vec2 uv = sdKoch(p.xy);
-  
-//      d = length(uv) - 0.03;  // makes a cylinder
-  
-//      d =  uv.y;
-//      d = max(d, abs(p.z)- 0.1); // boolean intersection
-     
-//   return d;
-// }
-
-
 float GetDistKoch(vec3 p, float choice) {
    float d; 
    vec2 xy;
