@@ -7,32 +7,24 @@
 
 The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.
 
-Here is the superformula: 
-
-$r(phi) = \bigg\left{[  \bigg\lvert frac{cos(frac{m\times\phi}{4}}{a}\bigg\rvert^{n_{2} + \bigg\lvert frac{sin({m\times\phi}{4}}{b}\bigg\rvert^{n_{3}}  \bigg\right]^{-frac{1}{n_{1}}}$
-
-where
-
-r is the radius and $\phi is the angle
-
 [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
 
-Yikes--this is really complex math!  Lucky, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge video is a great start!!
+The supershape formula is really complex math!  Lucky, we don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge video is a great start!!
 
 ## Rendering 3D supershapes using the superformula
 
   These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. 
 
-<img class="img" src="assets/geom2.jpg" alt="Supershape" style=" display: block;
+<img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 <img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-    <img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
+    <img class="img" src="assets/super2.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/crazy_shape.jpg" alt="Supershape with stroke" style=" display: block;
+<img class="img" src="assets/super_shape.jpg" alt="Supershape with stroke" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
