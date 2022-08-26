@@ -12,7 +12,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
 ## Rendering 3D supershapes using the superformula
 
-  These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. 
+  These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. This method applies a mesh to the vertices calculated from the superformula.  This is illustrated in the top left image, where the stroke is drawn.  In the other images, I have removed the stroke and varied the parameters to the supershape.  You can play around with the parameters in the live version of the sketch.
 
 <img class="img" src="assets/super7.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
@@ -27,6 +27,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
+- [Live version] 
 - [Supershape P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
 
@@ -54,7 +55,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
   In this method, we start with a 2D shape and mix by a percentage with a 3D shape.  Suppose you have always wondered, what would happen if you mixed a star with a circle (image on left)?  Now you can find out.  What about a Koch curve and a box?  Believe it or not, you can do that too (image on right)!
 
-<img class="img" src="assets/star_box.jpg" alt="star_box" style=" display: block;
+<img class="img" src="assets/star_circle.jpg" alt="star_circle" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 <img class="img" src="assets/koch_box.jpg" alt="Koch curve mixed with box" style=" display: block;
@@ -80,14 +81,14 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
 ### Rotation method -- illustrated with the Koch fractal
 
-  In this method, from Martijn Steinrucken, the Koch fractal is rotated on all three axis and then the boolean intersection is taken.
+  In this method--from the very clever and creative Martijn Steinrucken--the Koch fractal is rotated on all three axis and then the boolean intersection is taken (image on left).  When you mix the 3D Koch fractal with a box, you get the shape on the right.
 
   [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
 
-<!-- <img class="img" src="assets/cookie_Koch.jpg" alt="Koch curve tube" style=" display: block;
+<img class="img" src="assets/3d_koch_fractal.jpg" alt="3D Koch fractal" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="400" height="400"> -->
-<img class="img" src="assets/koch_with_box.jpg" alt="3D Koch fractal mixed with box" style=" display: block;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/koch_w_box.jpg" alt="3D Koch fractal mixed with box" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
