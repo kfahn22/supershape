@@ -1,6 +1,7 @@
 // This file how to mix shapes 
 // This is based on the works of Inigo Quilez and Martijn Steinrucken
 
+// Another method is from Inigo Quilez 
 // https://iquilezles.org/
 
 // One method is based on tutorials by Martyn 
@@ -26,7 +27,6 @@ uniform float iTime;
 uniform vec2 iMouse;
 uniform float iFrame;
 uniform sampler2D tex0;
-//uniform float choice;
 uniform float shape1;
 uniform float shape2;
 uniform float scale;  // scale
@@ -35,6 +35,9 @@ uniform float h; // height
 uniform float r; // radius for star
 uniform int nn;  // angle parameter for star
 uniform float m;  // angle paramenter for star
+uniform float re;  // value for red
+uniform float gr;  // value for green
+uniform float bl;  // value for blue
 
 // Add color
 // The uvs are floating point with a range of [0.0,1.0] so we normalize by dividing by 255.
@@ -116,10 +119,23 @@ vec2 sdKoch( vec2 uv) {
   uv /= scale;
   return uv;
 }
-// 3d SDFs
+// 3d SDFs from Inigo Quilez
 float sdBox(vec3 p, vec3 s) {
     p = abs(p)-s;
 	return length(max(p, 0.))+min(max(p.x, max(p.y, p.z)), 0.);
+}
+
+float sdTorus( vec3 p, vec2 t )
+{
+  vec2 q = vec2(length(p.xz)-t.x,p.y);
+  return length(q)-t.y;
+}
+
+float sdEllipsoid( vec3 p, vec3 r )
+{
+  float k0 = length(p/r);
+  float k1 = length(p/(r*r));
+  return k0*(k0-1.0)/k1;
 }
 
 // 2d Circle, Box, Star, and rhombus SDFs from Inigo Quilez
@@ -179,19 +195,19 @@ float GetDist(vec3 p, float shape1, float shape2, float scale, float mv, float h
       // start with a star and mix with a circle
     } else if (shape1 == 1.0 && shape2 == 0.0) {
        d = sdStar(q.xz, r, 8, m);
-       d = mix( d, length(p) - scale, mv);
+       d = mix( d, sdEllipsoid(q, vec3(scale, h, scale)), mv);
        d = max(d, abs(p.y) - h);
       // start with a star and mix with a box
     } else if (shape1 == 1.0 && shape2 == 1.0) {
        d = sdStar(q.xz, r, 18, m );
        d = mix(d, sdBox(q, vec3(scale, h, scale)), mv) ;
-       d = max(d, abs(p.y) - h);
+       d = max(d, abs(p.y) - 0.15);
     } else if (shape1 == 2.0 && shape2 == 0.0) {
        d = sdEquilateralTriangle(q.xz);
        d = mix( d, length(p) - scale, mv);
     } else if (shape1 == 2.0 && shape2 == 1.0) {
        d = sdEquilateralTriangle(q.xz);
-       d = mix(d, sdBox(q, vec3(scale)), mv);
+       d = mix(d, sdBox(q, vec3(scale, h, scale)), mv);
     }
      else if (shape1 == 3.0 && shape2 == 1.0) {
        d = sdKoch(q.xz).y;
@@ -199,7 +215,7 @@ float GetDist(vec3 p, float shape1, float shape2, float scale, float mv, float h
     }
     else if (shape1 == 3.0 && shape2 == 0.0) {
        d = sdKoch(q.xz).y;
-        d = mix( d, length(p) - scale, mv);
+        d = mix( d,  sdEllipsoid(q, vec3(scale, h, scale)), mv);
     }
     return d;
 }
@@ -251,8 +267,8 @@ void main( )
     
     
     vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 2.0);
-     //col = colorGradient(uv,TEAL, ORANGE, 0.25);
-    col = TEAL;
+     col = colorGradient(uv,TEAL, ORANGE, 0.5);
+    //col = TEAL;
   
      // Add a reflective background surface
     // uv = vec2(atan(rd.x, rd.z)/ 6.2832 , rd.y/3.) + .5;  // remap coordinates
@@ -268,10 +284,9 @@ void main( )
         float dif = dot(n, normalize(vec3(1,2,3)))*.5+.5;
         vec3 c = vec3(dif);
          
-        //col = mix(col, c*RED, 0.5);
-        col = c*RED;
-       
-      
+      // col = vec3(dif*0.8, 0.0, 1.0 );
+      // col = vec3(0.0, dif*0.8, 1.0 );
+      col = vec3( dif*re, dif*gr, dif*bl );
     } 
        
     col = pow(col, vec3(.4545));	// gamma correction

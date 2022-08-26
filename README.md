@@ -1,73 +1,97 @@
-# Supershape Generator
+# 3D SUPER shapes
 
 ## The genesis of my interest in shapershapes is Daniel Shiffman's wonderful Coding Train Challenge on Supershapes.
 
 [3d Supershapes challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
+[Link to code]
 
-# Supershapes
+The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.
 
-## Definition of Supershape set from Wikipedia:
+Here is the superformula: 
 
-
-[Wikipedia page on supershapes] https://en.wikipedia.org/wiki/
-
-## Defintion of Mandelbulb from Wikipedia
-
-Supershapes is a three-dimensional fractal rendered using spherical coordinates.  The "nth power" formula, developed by Daniel White and Paul Nylander, for the vector $\mathbf{v}$ = (x,y,z) in $\mathbb{R}^3$ is:
-
-$v^n := r^n\left[ \begin{array}{ccc}\sin(n\theta)cos(n\phi), sin(n\theta)sin(n\phi), cos(n\theta)\end{array} \right]$
+$r(phi) = \bigg\left{[  \bigg\lvert frac{cos(frac{m\times\phi}{4}}{a}\bigg\rvert^{n_{2} + \bigg\lvert frac{sin({m\times\phi}{4}}{b}\bigg\rvert^{n_{3}}  \bigg\right]^{-frac{1}{n_{1}}}$
 
 where
 
-r = $\sqrt{x^2 + y^2 + z^2}$,
+r is the radius and $\phi is the angle
 
-$\phi = \arctan\[{y}{x}\]$,
+[Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
 
-$\theta = \arctan\[\sqrt{x^2 + y^2}{z}]$
+Yikes--this is really complex math!  Lucky, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge video is a great start!!
 
-Obviously, this is really complex math!!
+## Rendering 3D supershapes using the superformula
 
+  These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. 
 
-
-## 1.  
-
-## 2.  Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy.  I have used some of his techniques in the .frag file.  His website contains a wealth on information on shaders.
-- [Inigo Quilez website] https://iquilezles.org
-
-## 3.  Martijn Steinrucken has some wonderful wonderful shader tutorials on youtube.  I have used his ray marching starting point in my frag files.  If you want a really good explanation of ray marching, I highly recommend you watch his videos on the topic! He also has a wonderful video on the mandelbrot set where he compares the 
-
-- [YouTube: youtube.com/TheArtOfCodeIsCool] https://www.youtube.com/watch?v=PGtv-dBi2wE
-- [Ray marching starting point] https://www.shadertoy.com/view/WtGXDD
-
-## 4.  
-- [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
-- [Link to shadertoy code] https://www.shadertoy.com/view/lt33z7
-
-
-This p5.js sketch renders supershapes using several different methods to obtain different 3D shapes.  
-
-## Geometry
-
-<img class="img" src="assets/geom1.jpg" alt="Supershape" style=" display: block;
-    margin-left: auto;
-    margin-right: auto;" width="500" height="500">
 <img class="img" src="assets/geom2.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
-<img class="img" src="assets/geom3.jpg" alt="Supershape" style=" display: block;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
-<img class="img" src="assets/super_shape.jpg" alt="Supershape with stroke" style=" display: block;
+    margin-right: auto;" width="400" height="400">
+    <img class="img" src="assets/super1.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/crazy_shape.jpg" alt="Supershape with stroke" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
 
 - [Supershape P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
 
-
 ## Shaders
+
+  You can also render SUPER shapes using a shader.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  You can make some really crazy awesome shapes using a shader.  Shaders use ray-marching instead of rendering a mesh on vertices.  If you are not familar with ray-marching, here are some excellent resources.
+
+- Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy, another place you can write shaders. His website contains a wealth on information on shaders!!
+
+  - [Inigo Quilez website] https://iquilezles.org
+  - [Inigo Quilez youtube channel] https://www.youtube.com/c/InigoQuilez
+
+  - [Rendering Raycasting Coding Train challenge] https://thecodingtrain.com/challenges/146-rendering-ray-casting
+  - [Ray Marching for Dummies by The Art of Code] https://www.youtube.com/watch?v=PGtv-dBi2wE
+  - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 
 ### Mixing two different shapes
 
+  In this method, we start with a 2D shape and mix by a percentage with a 3D shape.
+
+<img class="img" src="assets/star_box.jpg" alt="star_box" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/koch_box.jpg" alt="Koch curve mixed with box" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
 - [Shader -- Mixing Two Shapes] https://editor.p5js.org/kfahn/full/ox3GdxXTJ
 - [Link to code] https://editor.p5js.org/kfahn/sketches/ox3GdxXTJ
+
+### Extrusions
+
+   In this method, akin to using a playdough mold to form a shape, we extrude through a 2D shape to obtain a 3D shape.  The 2D sdf's are from Inigo Quilez, who has spent a great deal of time optimizing them.  The extrusion function is also from Inigo Quilez. 
+   
+   <img class="img" src="assets/extruded_hex.jpg" alt="Extruded hexagon" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/extruded_star.jpg" alt="Extruded star" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
+- [Shader -- Extrusion] https://editor.p5js.org/kfahn/full/6W1gXtNUi
+- [Link to code] https://editor.p5js.org/kfahn/sketches/6W1gXtNUi
+
+### Rotation method -- illustrated with the Koch fractal
+
+  In this method, from Martijn Steinrucken, the Koch fractal is rotated on all three axis and then the boolean intersection is taken.
+
+  [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
+
+<img class="img" src="assets/cookie_Koch.jpg" alt="Koch curve tube" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/koch_with_box.jpg" alt="3D Koch fractal mixed with box" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
+- [Shader -- Rotations] https://editor.p5js.org/kfahn/full/enksfyy-t
+- [Link to code] https://editor.p5js.org/kfahn/sketches/enksfyy-t
