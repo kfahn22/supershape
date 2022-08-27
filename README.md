@@ -112,10 +112,10 @@
 
   What discussion of super shapes would be complete without the ultimate SUPER shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more, check out my repo.
 
- <img class="img" src="assets/purple_mandelbulb.jpg" alt="Mandelbulb" style=" display: block;
+ <img class="img" src="assets/mandie.jpg" alt="Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-     <img class="img" src="assets/aqua_mandelbulb.jpg" alt="Mandelbulb" style=" display: block;
+     <img class="img" src="assets/mandie2.jpg" alt="Mandelbulb" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
