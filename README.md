@@ -55,12 +55,12 @@
  <img class="img" src="assets/sh_super1.jpg" alt="Supershape rendered with a shader" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/sh_super2.jpg" alt="Supershape rendered with a shader" style=" display: block;
+ <img class="img" src="assets/sh_super2.jpg" alt="Supershape rendered with a shader" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-[Link to p5sketch] https://editor.p5js.org/kfahn/full/pNgfhTXfN
-[Link to code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
+- [Link to p5sketch] https://editor.p5js.org/kfahn/full/pNgfhTXfN
+- [Link to code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
 
  ## SUPER shapes rendered with a shader using other methods
 
