@@ -19,7 +19,7 @@
 
 <body>
 	<header id="index">
-		<h1>3D Shapes Rendered with different Methods</h1>
+		<h1>Rendering 3D Shapes in p5.js</h1>
 		<nav id="myNavBar">
 			<div class="overlay" id="myNav">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -39,7 +39,7 @@
 				<!-- <a href="about.html">About</a> -->
 				<a href="supershape.html">Supershapes</a>
 				<a href="mixture.html">Mixing Shapes</a>
-			    <a href="rotation.html">Using Rotations</a>
+				<a href="rotation.html">Using Rotations</a>
 				<a href="extrusion.html">Extrusions</a>
 			</div>
 
@@ -47,69 +47,75 @@
 			<button id="ham"><span onclick="openNav()"><i class="fa fa-bars"></i></span></button>
 		</nav>
 	</header>
-    <div>
+	<div>
 		<h2 id="construction">SITE UNDER CONSTRUCTION</h2>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div id="">
-				
-				
 			</div>
-			<div id = "intro">
+			<div id="intro">
 				<p>
-					This website will show how to render 3D shapes in p5 using two different appproaches.  The first 
-					is based on Daniel Shiffman's 3D supershape Coding Challenge and uses the supershape formula.  The second uses shaders and is based on the work of Inigo Quilez and 
-					Martijn Steinrucken.  You will see that you can obtain some very unique 3D shapes using both approaches!
+					This website will show how to render 3D shapes in p5.js using several different approaches. The first
+					is based on Daniel Shiffman's 3D supershape Coding Challenge and uses the supershape formula. The
+					second uses shaders and is based on the work of Inigo Quilez and
+					Martijn Steinrucken. You will see that you can obtain some very unique 3D shapes using both
+					approaches!
 				</p>
-
+				<div class = "images">
+					<img class="img" src="assets/supershape_stroke.jpg" alt="Supershape rendered with vertices" style=" display: block;
+				margin-left: auto;
+				margin-right: auto;" width="400" height="400">
+					<img class="img" src="assets/sh_super2.jpg" alt="Supershape rendered with a shader" style=" display: block;
+				margin-left: auto;
+				margin-right: auto;" width="400" height="400">
+				</div>
 			</div>
-		</div>
-		<!-- javascript -->
-		<!-- This function toggles a read more button -->
-		<script>
-			$(document).ready(function () {
-				$("#myInput").on("keyup", function () {
-					var value = $(this).val().toLowerCase();
-					$("#myDIV *").filter(function () {
-						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			<!-- javascript -->
+			<!-- This function toggles a read more button -->
+			<script>
+				$(document).ready(function () {
+					$("#myInput").on("keyup", function () {
+						var value = $(this).val().toLowerCase();
+						$("#myDIV *").filter(function () {
+							$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+						});
 					});
 				});
-			});
-		</script>
+			</script>
 
-		<!-- This function is for a Read more read less button -->
-		<!-- Code found on codepen legendaryPower "Simple Read Less Read More Button"-->
-		<script>
-			$(document).ready(function () {
-				$("#toggle").click(function () {
-					var elem = $("#toggle").text();
-					if (elem == "Answer") {
-						//Stuff to do when btn is in the read more state
-						$("#toggle").text("Close");
-						$("#text").slideDown();
-					} else {
-						//Stuff to do when btn is in the read less state
-						$("#toggle").text("Answer");
-						$("#text").slideUp();
-					}
+			<!-- This function is for a Read more read less button -->
+			<!-- Code found on codepen legendaryPower "Simple Read Less Read More Button"-->
+			<script>
+				$(document).ready(function () {
+					$("#toggle").click(function () {
+						var elem = $("#toggle").text();
+						if (elem == "Answer") {
+							//Stuff to do when btn is in the read more state
+							$("#toggle").text("Close");
+							$("#text").slideDown();
+						} else {
+							//Stuff to do when btn is in the read less state
+							$("#toggle").text("Answer");
+							$("#text").slideUp();
+						}
+					});
 				});
-			});
-		</script>
+			</script>
 
-		<!--This function open and closes a curtain overlay -->
+			<!--This function open and closes a curtain overlay -->
 
-		<script>
-			/* Open when someone clicks on the span element */
-			function openNav() {
-				document.getElementById("myNav").style.width = "100%";
-			}
+			<script>
+				/* Open when someone clicks on the span element */
+				function openNav() {
+					document.getElementById("myNav").style.width = "100%";
+				}
 
-			/* Close when someone clicks on the "x" symbol inside the overlay */
-			function closeNav() {
-				document.getElementById("myNav").style.width = "0%";
-			}
-		</script>
+				/* Close when someone clicks on the "x" symbol inside the overlay */
+				function closeNav() {
+					document.getElementById("myNav").style.width = "0%";
+				}
+			</script>
 </body>
 
 </html>

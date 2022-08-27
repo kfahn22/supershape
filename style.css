@@ -1,7 +1,8 @@
 html, body {
     margin: 0vw;
     /* padding: 2vw; */
-    background-color: #70327E;
+    /* background-color: #c2c2c2; */
+    background-image: linear-gradient(#9253A1,#F063A4);
   }
   header{
     /* background-color: #def0ed; */
@@ -23,26 +24,24 @@ html, body {
     margin-right: auto;
     padding: 1vw;
     font-size:x-large;
+    max-width: 80vw;;
   }
   
-  div #intro {
+  /* div #intro {
     width: 45vw;
     margin-top: auto;
     margin-bottom: auto;
-  }
+  } */
   
-  div #bella {
-    width: 30vw;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
   
   li {
     font-size: xx-large;
   }
   
   
- 
+ h2 {
+   text-align: center;
+ }
   
   /* header img {
     opacity: 0.25;
@@ -92,6 +91,12 @@ html, body {
     max-width: 120px;
   }
   
+  .images {
+    display: flex;
+    flex-direction: row;
+    padding: 1vh;
+  }
+
   iframe {
     margin-top: 2vh;
     width: 80vw;
@@ -109,8 +114,8 @@ html, body {
   }
   
   a:hover, a:active {
-    color: #3487ab;
-    background-color: #41addb;
+    color: #fff;
+    background-color: #fff;
   }
   
   /* Style the Image Used to Trigger the Modal */

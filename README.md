@@ -50,10 +50,12 @@
  Here is an awesome tutorial on ray marching by Martijn Steinrucken:
   - [Ray Marching for Dummies by The Art of Code] https://www.youtube.com/watch?v=PGtv-dBi2wE
 
+ Images of supershape rendered with a shader. Fair warning:  one thing you will soon find out if use the generator is that it is possible to enter parameters that violate the SDF and lead to distortions in the rendering. 
+
  <img class="img" src="assets/sh_super1.jpg" alt="Supershape rendered with a shader" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/sh_super2.jpg." alt="Supershape rendered with a shader" style=" display: block;
+<img class="img" src="assets/sh_super2.jpg" alt="Supershape rendered with a shader" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
@@ -64,7 +66,7 @@
 
  ### Rotation method 
 
-  In his tutorial "How to turn your 2d fractal into 3d!", the very clever and creative Martijn Steinrucken created a 3D Koch shape by rotating the fractal on all three axis and then taking the boolean intersection. You can do something similar with a 2D signed distance functions (SDF), which essentially calculate the distance from the surface of the shape to the center of the screen. The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
+  In his tutorial "How to turn your 2d fractal into 3d!", the very clever and creative Martijn Steinrucken created a 3D Koch shape by rotating the fractal on all three axes and then taking the boolean intersection. You can do something similar with a 2D signed distance functions (SDF), which essentially calculate the distance from the surface of the shape to the center of the screen. The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
 
   [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
 
@@ -118,4 +120,3 @@
     margin-right: auto;" width="400" height="400">
 
   [Link to mandelbulb repo] https://github.com/kfahn22/mandelbulb
-  
