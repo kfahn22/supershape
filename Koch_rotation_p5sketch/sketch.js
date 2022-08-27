@@ -1,3 +1,6 @@
+// The supershape code is based on Daniel Shiffman's 3d-supershapes challenge
+// https://thecodingtrain.com/challenges/26-3d-supershapes
+// I also used the code from https://openprocessing.org/sketch/651525 as a starting point
 // The shader code builds on work by Inigo Quilez and Martijn Steinrucken as detailed in the frag file
 
 
@@ -26,14 +29,14 @@ function setup() {
  
   let para = createP('3D Koch curve variations').parent(divA);
   sel = createSelect().parent(divA).class('dropdown');
-  sel.option('Hexagon', '0');
-  sel.option('Hexagram', '1');
-  sel.option('Star', '2');
-  sel.option('Rounded Cross', '3');
-  sel.option('RoundedX', '4');
-  sel.option('', '5');
-  sel.option('', '6');
-  sel.selected('1');
+  sel.option('Intersection', '0');
+  sel.option('Rotation in 1 axis', '1');
+  sel.option('Rotation on 2 axis', '2');
+  sel.option('Mixed with a circle', '3');
+  sel.option('Mixed with a box', '4');
+  sel.option('Cookie-cutter', '5');
+  sel.option('Slice', '6');
+  sel.selected('4');
   
   s = createSpan("scale: ").parent(divA);
   scaleSlider = createSlider(1, 20, 10, 1).style('width', '180px').parent(divA);

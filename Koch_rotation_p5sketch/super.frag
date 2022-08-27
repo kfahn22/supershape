@@ -1,7 +1,7 @@
-// This file shows how to create a 3D shape from a Koch fractal
-// This is based on a youtube tutorial by The Art of Code  Martijn Steinrucken
+// This file shows how to turn a 2d fractal into a 3D shape
 
-// https://www.youtube.com/c/TheArtofCodeIsCool
+// Based on the How to turn your 2d fractal into 3d! by Martijn Steinrucken
+// https://www.youtube.com/watch?v=__dSLc7-Cpo
 
 // Base code based on the Ray Marching Starting Point from the Art of Code
 // https://www.youtube.com/watch?v=PGtv-dBi2wE
@@ -24,6 +24,8 @@ uniform vec2 iMouse;
 uniform float iFrame;
 uniform sampler2D tex0;
 uniform float choice; // number for choice of 3D Koch curve 
+uniform float shape1;
+// uniform float shape2;
 uniform float scale;  // scale
 uniform float th;  // thickness of slice
 uniform float mv;  // mix value
@@ -131,137 +133,85 @@ float sdBox( vec2 uv, vec2 b )
     return length(max(d,0.0)) + min(max(d.x,d.y),0.0);
 }
 
-float sdHexagon( vec2 p, float r )
-{
-    const vec3 k = vec3(-0.866025404,0.5,0.577350269);
-    p = abs(p);
-    p -= 2.0*min(dot(k.xy,p),0.0)*k.xy;
-    p -= vec2(clamp(p.x, -k.z*r, k.z*r), r);
-    return length(p)*sign(p.y);
+// // r scales the star
+// // n -- vertices around circle
+// // m must must be > 1.0 (1.01 works) and less than n
+// float sdStar( vec2 uv,  float r, int n, float m)
+// {
+//     float an = 3.141593/float(n);
+//     float en = 3.141593/m; 
+//     vec2  acs = vec2(cos(an),sin(an));
+//     vec2  ecs = vec2(cos(en),sin(en)); 
+
+//     float bn = mod(atan(uv.x,uv.y),2.0*an) - an;
+//     uv = length(uv)*vec2(cos(bn),abs(sin(bn)));
+//     uv -= r*acs;
+//     uv += ecs*clamp( -dot(uv,ecs), 0.0, r*acs.y/ecs.y);
+//     return length(uv)*sign(uv.x);
+// }
+
+float GetDistKoch(vec3 p, float choice) {
+   float d; 
+   vec2 xy;
+   vec2 yz;
+   vec2 xz;
+   vec2 uv = sdKoch(p.xy);
+   if (choice == 0.0) {
+     //straight intersection 
+     xy = sdKoch( p.xy );
+     yz = sdKoch( p.yz );
+     xz = sdKoch( p.xz );
+     d = max(xy.y, max(yz.y, xz.y));
+   } else if (choice == 1.0) {
+   //similar to extrusion method with full depth
+     xy = sdKoch( vec2( length(p.xz), p.y ) );
+     d =  xy.y;
+   }
+  // roughly analygous to supershape contruction
+    else if (choice == 2.0) {
+        xy = sdKoch(vec2(length(p.xy), p.z));
+        yz = sdKoch(vec2(length(p.yz), p.x));
+        xz = sdKoch(vec2(length(p.xz), p.y));
+        d =  max(xy.y, max(yz.y, xz.y));    
+   }
+   else if (choice == 3.0) {
+     // intersection of revolutions
+        xy = sdKoch(vec2(length(p.xy), p.z));
+        yz = sdKoch(vec2(length(p.yz), p.x));
+        xz = sdKoch(vec2(length(p.xz), p.y));
+        d =  max(xy.y, max(yz.y, xz.y));    
+        // Mix with a sphere
+        d =  mix(d, length(p) - scale, mv);
+   }
+  else if (choice== 4.0) {
+        xy = sdKoch(vec2(length(p.xy), p.z));
+        yz = sdKoch(vec2(length(p.yz), p.x));
+        xz = sdKoch(vec2(length(p.xz), p.y));
+        d =  max(xy.y, max(yz.y, xz.y));    
+        // Mix with a box
+        d =  mix(d, sdBox(p, vec3(scale)), mv);
+   }
+   else if (choice == 5.0) {
+     // cookie cutter 
+       d = length(uv) - 0.03;  // makes a cylinder
+       d = max(d, abs(p.z)- th); // boolean intersection
+   }
+   else if (choice == 6.0)  {
+       // slice
+       d = length(uv) - 0.03;  // makes a cylinder
+       d =  uv.y;
+       d = max(d, abs(p.z)- th); // boolean intersection
+   }
+  return d;
 }
 
-float dot2( in vec2 v ) { return dot(v,v); }
-float sdRoundedCross( vec2 p, float h )
-{
-    float k = 0.5*(h+1.0/h); // k should be const at modeling time
-    p = abs(p);
-    return ( p.x<1.0 && p.y<p.x*(k-h)+h ) ? 
-             k-sqrt(dot2(p-vec2(1,k)))  :
-           sqrt(min(dot2(p-vec2(0,h)),
-                    dot2(p-vec2(1,0))));
-}
-
-float sdCross( vec2 p,  vec2 b, float r ) 
-{
-    p = abs(p); p = (p.y>p.x) ? p.yx : p.xy;
-    vec2  q = p - b;
-    float k = max(q.y,q.x);
-    vec2  w = (k>0.0) ? q : vec2(b.y-p.x,-k);
-    return sign(k)*length(max(w,0.0)) + r;
-}
-
-float sdBlobbyCross( in vec2 pos, float he )
-{
-    pos = abs(pos);
-    pos = vec2(abs(pos.x-pos.y),1.0-pos.x-pos.y)/sqrt(2.0);
-
-    float p = (he-pos.y-0.25/he)/(6.0*he);
-    float q = pos.x/(he*he*16.0);
-    float h = q*q - p*p*p;
-    
-    float x;
-    if( h>0.0 ) { float r = sqrt(h); x = pow(q+r,1.0/3.0)-pow(abs(q-r),1.0/3.0)*sign(r-q); }
-    else        { float r = sqrt(p); x = 2.0*r*cos(acos(q/(p*r))/3.0); }
-    x = min(x,sqrt(2.0)/2.0);
-    
-    vec2 z = vec2(x,he*(1.0-2.0*x*x)) - pos;
-    return length(z) * sign(z.y);
-}
-
-float sdParallelogram( vec2 p, float wi, float he, float sk )
-{
-    vec2 e = vec2(sk,he);
-    p = (p.y<0.0)?-p:p;
-    vec2  w = p - e; w.x -= clamp(w.x,-wi,wi);
-    vec2  d = vec2(dot(w,w), -w.y);
-    float s = p.x*e.y - p.y*e.x;
-    p = (s<0.0)?-p:p;
-    vec2  v = p - vec2(wi,0); v -= e*clamp(dot(v,e)/dot(e,e),-1.0,1.0);
-    d = min( d, vec2(dot(v,v), wi*he-abs(s)));
-    return sqrt(d.x)*sign(-d.y);
-}
-// r scales the star
-// n -- vertices around circle
-// m must must be > 1.0 (1.01 works) and less than n
-float sdStar( vec2 uv,  float r, int n, float m)
-{
-    float an = 3.141593/float(n);
-    float en = 3.141593/m; 
-    vec2  acs = vec2(cos(an),sin(an));
-    vec2  ecs = vec2(cos(en),sin(en)); 
-
-    float bn = mod(atan(uv.x,uv.y),2.0*an) - an;
-    uv = length(uv)*vec2(cos(bn),abs(sin(bn)));
-    uv -= r*acs;
-    uv += ecs*clamp( -dot(uv,ecs), 0.0, r*acs.y/ecs.y);
-    return length(uv)*sign(uv.x);
-}
-
-float sdRoundedX( vec2 p,  float w, float r )
-{
-    p = abs(p);
-    return length(p-min(p.x+p.y,w)*0.5) - r;
-}
-
-float sdHexagram(  vec2 p,  float r )
-{
-    const vec4 k = vec4(-0.5,0.8660254038,0.5773502692,1.7320508076);
-    p = abs(p);
-    p -= 2.0*min(dot(k.xy,p),0.0)*k.xy;
-    p -= 2.0*min(dot(k.yx,p),0.0)*k.yx;
-    p -= vec2(clamp(p.x,r*k.z,r*k.w),r);
-    return length(p)*sign(p.y);
-}
-
-float rotation( vec3 p) {
-  float d;
-  float d1, d2, d3;
-  if (choice == 0.0) {
-   d1 =  sdHexagon( vec2( length(p.xy), p.z ), scale);
-   d2 =  sdHexagon( vec2( length(p.yz), p.x ), scale);
-   d3 =  sdHexagon( vec2( length(p.xz), p.y ), scale);
-  } else if (choice == 1.0) {
-    d1 =  sdHexagram( vec2( length(p.xy), p.z ), 0.75*scale);
-    d2 =  sdHexagram( vec2( length(p.yz), p.x ), 0.75*scale);
-    d3 =  sdHexagram( vec2( length(p.xz), p.y ), 0.75* scale);
-  } else if (choice == 2.0) {
-   d1 = sdStar( vec2( length(p.xy), p.z), scale, 8, 6.0);
-   d2 = sdStar( vec2( length(p.yz), p.x), scale, 8, 6.0);
-   d3 = sdStar( vec2( length(p.xz), p.y), scale, 8, 6.0);
-  } else if (choice == 3.0) {
-     d1 =  sdRoundedCross( vec2( length(p.xy), p.z ), scale);
-     d2 =  sdRoundedCross( vec2( length(p.yz), p.x ), scale);
-     d3 =  sdRoundedCross( vec2( length(p.xz), p.y ),  scale);
-  } else if (choice == 4.0) {
-    d1 =  sdRoundedX( vec2( length(p.xy), p.z ), 0.75, 0.25*scale);
-    d2 =  sdRoundedX( vec2( length(p.yz), p.x ), 0.75, 0.25*scale);
-    d3 =  sdRoundedX( vec2( length(p.xz), p.y ), 0.75, 0.25*scale);
-  }
-  else if (choice == 5.0) {
-    d1 =  sdParallelogram( vec2( length(p.xy), p.z ), 0.4, 0.6, 0.1);
-    d2 =  sdParallelogram( vec2( length(p.yz), p.x ), 0.4, 0.6, 0.1);
-    d3 =  sdParallelogram( vec2( length(p.xz), p.y ), 0.4, 0.6, 0.1);
-  }
-   d = max(d1, max(d2, d3));
-   return d;
-}
 
 /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
  
 float GetDist(  vec3 p, float shape3) {
-  return rotation( p );
-  //return GetDistKoch( p, shape3 );
+  //return GetDistKoch( p );
+  return GetDistKoch( p, shape3 );
 }
 
 
@@ -311,9 +261,13 @@ void main( )
     ro.xz *= Rot(-m.x*6.2831);
     
     
-    vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 3.0);
-   col = colorGradient(uv,BLUE, PURPLE, 0.75);
+    vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 2.0);
+   col = colorGradient(uv,TEAL, ORANGE, 0.75);
     //col = ORANGE;
+  
+     // Add a reflective background surface
+    // uv = vec2(atan(rd.x, rd.z)/ 6.2832 , rd.y/3.) + .5;  // remap coordinates
+    // col = texture2D(tex0, uv).rgb;
   
     float d = RayMarch(ro, rd);
 

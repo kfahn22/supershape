@@ -49,11 +49,26 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
  Here is an awesome tutorial on ray marching by Martijn Steinrucken:
   - [Ray Marching for Dummies by The Art of Code] https://www.youtube.com/watch?v=PGtv-dBi2wE
- 
+
+ ### Rotation method 
+
+  In his tutorial "How to turn your 2d fractal into 3d!", the very clever and creative Martijn Steinrucken ccreated a 3D Koch shape by rotating the fractal on all three axis and then taking the boolean intersection. You can do something similar with a 2D sdf. 
+
+  [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
+
+<img class="img" src="assets/hexagram.jpg" alt="3D Hexagram" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/3d_star.jpg" alt="3D Star" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
+- [Shader -- Rotations] https://editor.p5js.org/kfahn/full/bveKzyp2D
+- [Link to code] https://editor.p5js.org/kfahn/sketches/bveKzyp2D
 
 ### Mixing two different shapes
 
-  In this method, we start with a 2D shape and mix by a percentage with a 3D shape.  Suppose you have always wondered, what would happen if you mixed a star with a circle (image on left)?  Now you can find out.  What about a Koch curve and a box?  Believe it or not, you can do that too (image on right)!
+  In this method, we start with a 2D shape and mix by a percentage with a 3D shape.  Suppose you have always wondered, what would happen if you mixed a star with a circle?  Now you can find out (image on left).  What about mixing the Koch curve and a box?  Believe it or not, you can do that too (image on right)!
 
 <img class="img" src="assets/star_circle.jpg" alt="star_circle" style=" display: block;
     margin-left: auto;
@@ -78,19 +93,3 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
 - [Shader -- Extrusion] https://editor.p5js.org/kfahn/full/6W1gXtNUi
 - [Link to code] https://editor.p5js.org/kfahn/sketches/6W1gXtNUi
-
-### Rotation method -- illustrated with the Koch fractal
-
-  In this method--from the very clever and creative Martijn Steinrucken--the Koch fractal is rotated on all three axis and then the boolean intersection is taken (image on left).  When you mix the 3D Koch fractal with a box, you get the shape on the right.
-
-  [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
-
-<img class="img" src="assets/3d_koch_fractal.jpg" alt="3D Koch fractal" style=" display: block;
-    margin-left: auto;
-    margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/koch_w_box.jpg" alt="3D Koch fractal mixed with box" style=" display: block;
-    margin-left: auto;
-    margin-right: auto;" width="400" height="400">
-
-- [Shader -- Rotations] https://editor.p5js.org/kfahn/full/enksfyy-t
-- [Link to code] https://editor.p5js.org/kfahn/sketches/enksfyy-t
