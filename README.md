@@ -14,16 +14,16 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
   These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. This method applies a mesh to the vertices calculated from the superformula.  This is illustrated in the top left image, where the stroke is drawn.  In the other images, I have removed the stroke and varied the parameters to the supershape.  You can play around with the parameters in the live version of the sketch.
 
+<img class="img" src="assets/supershape_stroke.jpg" alt="Supershape" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
 <img class="img" src="assets/super7.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/super4.jpg" alt="Supershape" style=" display: block;
+    <img class="img" src="assets/super2.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-    <img class="img" src="assets/super3.jpg" alt="Supershape" style=" display: block;
-    margin-left: auto;
-    margin-right: auto;" width="400" height="400">
-<img class="img" src="assets/supershape_stroke.jpg" alt="Supershape with stroke" style=" display: block;
+<img class="img" src="assets/super4.jpg" alt="Supershape with stroke" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
@@ -52,7 +52,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
 
  ### Rotation method 
 
-  In his tutorial "How to turn your 2d fractal into 3d!", the very clever and creative Martijn Steinrucken ccreated a 3D Koch shape by rotating the fractal on all three axis and then taking the boolean intersection. You can do something similar with a 2D sdf. 
+  In his tutorial "How to turn your 2d fractal into 3d!", the very clever and creative Martijn Steinrucken created a 3D Koch shape by rotating the fractal on all three axis and then taking the boolean intersection. You can do something similar with a 2D SDF. The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D sdfs are from Inigo Quilez.)
 
   [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
 
@@ -63,7 +63,7 @@ The supershape formula is really complex math!  Lucky, we don't have to complete
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader -- Rotations] https://editor.p5js.org/kfahn/full/bveKzyp2D
+- [P5sketch -- Shader w/ Rotations] https://editor.p5js.org/kfahn/full/bveKzyp2D
 - [Link to code] https://editor.p5js.org/kfahn/sketches/bveKzyp2D
 
 ### Mixing two different shapes
