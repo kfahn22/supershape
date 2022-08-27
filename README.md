@@ -1,12 +1,16 @@
 # 3D SUPER shapes
 
- The genesis of my interest in supershapes is Daniel Shiffman's wonderful Coding Train Challenge on Supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge video is a great start.
+ I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
-[3d Supershapes challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
+[Superellipse challenge] https://thecodingtrain.com/challenges/19-superellipse
+[2d Supershape challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
+[Spherical geometry] https://thecodingtrain.com/challenges/25-spherical-geometry
+[3d Supershape challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
 
 [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
+[Paul Bourke webpage on supershapes] http://paulbourke.net/geometry/supershape/
 
-## Rendering 3D supershapes using the superformula
+## 3D supershape generator rendering with vertices and mesh
 
   These shapes were rendered in p5.js using a port of the code that Daniel Shiffman wrote in Processing in his Supershape Coding Challenge. This method applies a mesh to the vertices calculated from the superformula.  This is illustrated in the top left image, where the stroke is drawn.  In the other images, I have removed the stroke and varied the parameters to the supershape.  I have created a supershape generator with sliders and color options, so you can experiment with the parameters.
 
@@ -27,9 +31,9 @@
 - [Supershape P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
 
-## Shaders
+## 3D Supershape generator with a shader 
 
-  You can also render fun SUPER shapes using a shader.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  You can make some crazy awesome shapes using a shader, which use ray-marching instead of rendering a mesh on vertices.  If you are not familar with ray-marching, here are some excellent resources.
+  I have also rendered the supershape using a shader.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  The shader renders 3D shapes by  ray-marching instead of rendering a mesh on vertices.  If you are not familar with ray-marching, here are some excellent resources.
 
  Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy, which is another place you can write shaders. His website contains a wealth of information on shaders.
 
@@ -45,6 +49,18 @@
 
  Here is an awesome tutorial on ray marching by Martijn Steinrucken:
   - [Ray Marching for Dummies by The Art of Code] https://www.youtube.com/watch?v=PGtv-dBi2wE
+
+ <img class="img" src="assets/sh_super1.jpg" alt="Supershape rendered with a shader" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/sh_super2.jpg." alt="Supershape rendered with a shader" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
+[Link to p5sketch] https://editor.p5js.org/kfahn/full/pNgfhTXfN
+[Link to code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
+
+ ## SUPER shapes rendered with a shader using other methods
 
  ### Rotation method 
 
@@ -80,10 +96,10 @@
 
    In this method, akin to using a playdough mold to form a shape, we extrude through a 2D shape to obtain a 3D shape.  The 2D SDF's are again from Inigo Quilez, who has spent a great deal of time optimizing them.  The extrusion function is also from Inigo Quilez.  The 2D SDF's have to be precise, or this method won't work.  Even with Inigo Quilez's SDF's, there is a little bit of aliasing on the extruded star (probably my fault).
    
-   <img class="img" src="assets/extruded_hex.jpg" alt="Extruded hexagon" style=" display: block;
+   <img class="img" src="assets/extruded_star.jpg" alt="Extruded star" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-   <img class="img" src="assets/extruded_star.jpg" alt="Extruded star" style=" display: block;
+     <img class="img" src="assets/extruded_hex.jpg" alt="Extruded hexagon" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
