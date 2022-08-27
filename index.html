@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>3D shapes</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body>
+	<header id="index">
+		<h1>3D Shapes Rendered with different Methods</h1>
+		<nav id="myNavBar">
+			<div class="overlay" id="myNav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div class="overlay-content">
+					<!-- <a href="about.html" id="aboutMe">About</a> -->
+					<!-- <a href="wfc.html">WFC</a> -->
+					<!-- <a href="digital_quilts.html" id="genArt">Digital Quilts</a>
+					<a href="tiles.html" id="tiles">Tiles</a>
+					<a href="tile_creator.html">Tile Creator</a>
+					<a href="resources.html">Resources</a> -->
+					<!-- <a href="code.html">Code</a> -->
+				</div>
+			</div>
+
+			<div class="topNav">
+				<a href="index.html" class="active" id="a0">Home</a>
+				<!-- <a href="about.html">About</a> -->
+				<a href="supershape.html">Supershapes</a>
+				<a href="mixture.html">Mixing Shapes</a>
+			    <a href="rotation.html">Using Rotations</a>
+				<a href="extrusion.html">Extrusions</a>
+			</div>
+
+			<!-- Use any element to open/show the overlay navigation menu-->
+			<button id="ham"><span onclick="openNav()"><i class="fa fa-bars"></i></span></button>
+		</nav>
+	</header>
+    <div>
+		<h2 id="construction">SITE UNDER CONSTRUCTION</h2>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div id="">
+				
+				
+			</div>
+			<div id = "intro">
+				<p>
+					This website will show how to render 3D shapes in p5 using two different appproaches.  The first 
+					is based on Daniel Shiffman's 3D supershape Coding Challenge and uses the supershape formula.  The second uses shaders and is based on the work of Inigo Quilez and 
+					Martijn Steinrucken.  You will see that you can obtain some very unique 3D shapes using both approaches!
+				</p>
+
+			</div>
+		</div>
+		<!-- javascript -->
+		<!-- This function toggles a read more button -->
+		<script>
+			$(document).ready(function () {
+				$("#myInput").on("keyup", function () {
+					var value = $(this).val().toLowerCase();
+					$("#myDIV *").filter(function () {
+						$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+		</script>
+
+		<!-- This function is for a Read more read less button -->
+		<!-- Code found on codepen legendaryPower "Simple Read Less Read More Button"-->
+		<script>
+			$(document).ready(function () {
+				$("#toggle").click(function () {
+					var elem = $("#toggle").text();
+					if (elem == "Answer") {
+						//Stuff to do when btn is in the read more state
+						$("#toggle").text("Close");
+						$("#text").slideDown();
+					} else {
+						//Stuff to do when btn is in the read less state
+						$("#toggle").text("Answer");
+						$("#text").slideUp();
+					}
+				});
+			});
+		</script>
+
+		<!--This function open and closes a curtain overlay -->
+
+		<script>
+			/* Open when someone clicks on the span element */
+			function openNav() {
+				document.getElementById("myNav").style.width = "100%";
+			}
+
+			/* Close when someone clicks on the "x" symbol inside the overlay */
+			function closeNav() {
+				document.getElementById("myNav").style.width = "0%";
+			}
+		</script>
+</body>
+
+</html>
