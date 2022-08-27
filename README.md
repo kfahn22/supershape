@@ -41,7 +41,7 @@
   - [Inigo Quilez youtube channel] https://www.youtube.com/c/InigoQuilez
 
  Jamie Wong has a great article on Ray Marching and Signed Distance Functions.
- [- Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
+ - [Ray Marching and Signed Distance Functions] http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/
 
  Here are some wonderful tutorials by Daniel Shiffman: 
  - [Ray Casting 2d Coding Challenge] https://thecodingtrain.com/challenges/145-ray-casting-2d
@@ -105,3 +105,17 @@
 
 - [Shader -- Extrusion] https://editor.p5js.org/kfahn/full/6W1gXtNUi
 - [Link to code] https://editor.p5js.org/kfahn/sketches/6W1gXtNUi
+
+## The Mandelbulb
+
+  What discussion of super shapes would be complete without the ultimate SUPER shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more, check out my repo.
+
+ <img class="img" src="assets/purple_mandelbulb.jpg" alt="Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+     <img class="img" src="assets/aqua_mandelbulb.jpg" alt="Mandelbulb" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+
+  [Link to mandelbulb repo] https://github.com/kfahn22/mandelbulb
+  
