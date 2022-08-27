@@ -1,6 +1,7 @@
-// This file shows how to create a 3D shape from a Koch fractal
+// This file shows how to create a 3D shape from a 2D sdf
 // This is based on a youtube tutorial by The Art of Code  Martijn Steinrucken
-
+// How to turn your 2d fractal into 3d!
+// https://www.youtube.com/watch?v=__dSLc7-Cpo
 // https://www.youtube.com/c/TheArtofCodeIsCool
 
 // Base code based on the Ray Marching Starting Point from the Art of Code
@@ -111,15 +112,14 @@ vec2 sdKoch( vec2 uv) {
   uv /= scale;
   return uv;
 }
+
 // 3d SDFs
 float sdBox(vec3 p, vec3 s) {
     p = abs(p)-s;
 	return length(max(p, 0.))+min(max(p.x, max(p.y, p.z)), 0.);
 }
 
-
-
-// 2d Circle, Box, Star, and rhombus SDFs from Inigo Quilez
+// 2D circle, box, star, hexagram, hexagon, cross, and roundedX SDFs from Inigo Quilez
 
 float sdCircle( vec2 uv, float r) {
   return length(uv) - r;
@@ -140,17 +140,6 @@ float sdHexagon( vec2 p, float r )
     return length(p)*sign(p.y);
 }
 
-float dot2( in vec2 v ) { return dot(v,v); }
-float sdRoundedCross( vec2 p, float h )
-{
-    float k = 0.5*(h+1.0/h); // k should be const at modeling time
-    p = abs(p);
-    return ( p.x<1.0 && p.y<p.x*(k-h)+h ) ? 
-             k-sqrt(dot2(p-vec2(1,k)))  :
-           sqrt(min(dot2(p-vec2(0,h)),
-                    dot2(p-vec2(1,0))));
-}
-
 float sdCross( vec2 p,  vec2 b, float r ) 
 {
     p = abs(p); p = (p.y>p.x) ? p.yx : p.xy;
@@ -160,36 +149,17 @@ float sdCross( vec2 p,  vec2 b, float r )
     return sign(k)*length(max(w,0.0)) + r;
 }
 
-float sdBlobbyCross( in vec2 pos, float he )
+float dot2( vec2 v ) { return dot(v,v); }
+float sdHeart( vec2 p )
 {
-    pos = abs(pos);
-    pos = vec2(abs(pos.x-pos.y),1.0-pos.x-pos.y)/sqrt(2.0);
+    p.x = abs(p.x);
 
-    float p = (he-pos.y-0.25/he)/(6.0*he);
-    float q = pos.x/(he*he*16.0);
-    float h = q*q - p*p*p;
-    
-    float x;
-    if( h>0.0 ) { float r = sqrt(h); x = pow(q+r,1.0/3.0)-pow(abs(q-r),1.0/3.0)*sign(r-q); }
-    else        { float r = sqrt(p); x = 2.0*r*cos(acos(q/(p*r))/3.0); }
-    x = min(x,sqrt(2.0)/2.0);
-    
-    vec2 z = vec2(x,he*(1.0-2.0*x*x)) - pos;
-    return length(z) * sign(z.y);
+    if( p.y+p.x>1.0 )
+        return sqrt(dot2(p-vec2(0.25,0.75))) - sqrt(2.0)/4.0;
+    return sqrt(min(dot2(p-vec2(0.00,1.00)),
+                    dot2(p-0.5*max(p.x+p.y,0.0)))) * sign(p.x-p.y);
 }
 
-float sdParallelogram( vec2 p, float wi, float he, float sk )
-{
-    vec2 e = vec2(sk,he);
-    p = (p.y<0.0)?-p:p;
-    vec2  w = p - e; w.x -= clamp(w.x,-wi,wi);
-    vec2  d = vec2(dot(w,w), -w.y);
-    float s = p.x*e.y - p.y*e.x;
-    p = (s<0.0)?-p:p;
-    vec2  v = p - vec2(wi,0); v -= e*clamp(dot(v,e)/dot(e,e),-1.0,1.0);
-    d = min( d, vec2(dot(v,v), wi*he-abs(s)));
-    return sqrt(d.x)*sign(-d.y);
-}
 // r scales the star
 // n -- vertices around circle
 // m must must be > 1.0 (1.01 works) and less than n
@@ -223,36 +193,42 @@ float sdHexagram(  vec2 p,  float r )
     return length(p)*sign(p.y);
 }
 
-float rotation( vec3 p) {
-  float d;
-  float d1, d2, d3;
-  if (choice == 0.0) {
+float Rotation( vec3 p) {
+  float d, d1, d2, d3;
+  if (choice == 1.0) {
    d1 =  sdHexagon( vec2( length(p.xy), p.z ), scale);
    d2 =  sdHexagon( vec2( length(p.yz), p.x ), scale);
    d3 =  sdHexagon( vec2( length(p.xz), p.y ), scale);
-  } else if (choice == 1.0) {
+   d = max(d1, max(d2, d3));
+  } else if (choice == 0.0) {
     d1 =  sdHexagram( vec2( length(p.xy), p.z ), 0.75*scale);
     d2 =  sdHexagram( vec2( length(p.yz), p.x ), 0.75*scale);
     d3 =  sdHexagram( vec2( length(p.xz), p.y ), 0.75* scale);
+    d = max(d1, max(d2, d3));
   } else if (choice == 2.0) {
    d1 = sdStar( vec2( length(p.xy), p.z), scale, 8, 6.0);
    d2 = sdStar( vec2( length(p.yz), p.x), scale, 8, 6.0);
    d3 = sdStar( vec2( length(p.xz), p.y), scale, 8, 6.0);
+     d = max(d1, max(d2, d3));
   } else if (choice == 3.0) {
-     d1 =  sdRoundedCross( vec2( length(p.xy), p.z ), scale);
-     d2 =  sdRoundedCross( vec2( length(p.yz), p.x ), scale);
-     d3 =  sdRoundedCross( vec2( length(p.xz), p.y ),  scale);
+     d1 =  sdCross( vec2( length(p.xy), p.z ), vec2(scale), 0.3);
+     d2 =  sdCross( vec2( length(p.yz), p.x ), vec2(scale), 0.3);
+     d3 =  sdCross( vec2( length(p.xz), p.y ), vec2(scale), 0.3);
+     d = max(d1, max(d2, d3));
   } else if (choice == 4.0) {
     d1 =  sdRoundedX( vec2( length(p.xy), p.z ), 0.75, 0.25*scale);
     d2 =  sdRoundedX( vec2( length(p.yz), p.x ), 0.75, 0.25*scale);
     d3 =  sdRoundedX( vec2( length(p.xz), p.y ), 0.75, 0.25*scale);
+    d = max(d1, max(d2, d3));
+  } else if (choice == 5.0) {
+    vec2 xy = sdKoch(vec2(length(p.xy), p.z));
+    vec2 yz = sdKoch(vec2(length(p.yz), p.x));
+    vec2 xz = sdKoch(vec2(length(p.xz), p.y));
+    d =  max(xy.y, max(yz.y, xz.y));    
+    // Mix with a box
+    d =  mix(d, sdBox(p, vec3(scale)), mv);
   }
-  else if (choice == 5.0) {
-    d1 =  sdParallelogram( vec2( length(p.xy), p.z ), 0.4, 0.6, 0.1);
-    d2 =  sdParallelogram( vec2( length(p.yz), p.x ), 0.4, 0.6, 0.1);
-    d3 =  sdParallelogram( vec2( length(p.xz), p.y ), 0.4, 0.6, 0.1);
-  }
-   d = max(d1, max(d2, d3));
+   // d = max(d1, max(d2, d3));
    return d;
 }
 
@@ -260,12 +236,10 @@ float rotation( vec3 p) {
 ////////////////////////////////////////////////////////////////////
  
 float GetDist(  vec3 p, float shape3) {
-  return rotation( p );
+  return Rotation( p );
   //return GetDistKoch( p, shape3 );
 }
 
-
-// Both methods are the same from this point on
 float RayMarch(vec3 ro, vec3 rd) {
 	float dO=0.;
     
@@ -312,7 +286,7 @@ void main( )
     
     
     vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 3.0);
-   col = colorGradient(uv,BLUE, PURPLE, 0.75);
+    col = colorGradient(uv,BLUE, PURPLE, 0.75);
     //col = ORANGE;
   
     float d = RayMarch(ro, rd);
