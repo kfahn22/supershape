@@ -2,10 +2,10 @@
 
  I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
-[Superellipse challenge] https://thecodingtrain.com/challenges/19-superellipse
-[2d Supershape challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
-[Spherical geometry] https://thecodingtrain.com/challenges/25-spherical-geometry
-[3d Supershape challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
+- [Superellipse challenge] https://thecodingtrain.com/challenges/19-superellipse
+- [2d Supershape challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
+- [Spherical geometry] https://thecodingtrain.com/challenges/25-spherical-geometry
+- [3d Supershape challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
 
 [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
 [Paul Bourke webpage on supershapes] http://paulbourke.net/geometry/supershape/
@@ -27,7 +27,7 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Live version] 
+- [Live version] https://kfahn22.github.io/supershape/supershape.html
 - [Supershape P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
 - [Link to Code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
 
@@ -59,8 +59,9 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Link to p5sketch] https://editor.p5js.org/kfahn/full/pNgfhTXfN
-- [Link to code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
+- [Live version] https://kfahn22.github.io/supershape/supershape_shader.html
+- [p5sketch] https://editor.p5js.org/kfahn/full/pNgfhTXfN
+- [code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
 
  ## SUPER shapes rendered with a shader using other methods
 
