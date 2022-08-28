@@ -74,7 +74,7 @@
 <img class="img" src="assets/super_rotation.jpg" alt="3D Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
-    <img class="img" src="assets/super_rotation2.jpg" alt="3D Supershape" style=" display: block;
+    <img class="img" src="assets/supershape_rotation2.jpg" alt="3D Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
