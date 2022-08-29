@@ -46,17 +46,6 @@ html, body {
   /* header img {
     opacity: 0.25;
   } */
-  
-  /* header #train{
-    background-color: #def0ed;
-    background-image: url("assets/header/train.png");
-    background-repeat:repeat-x;
-    background-size: cover;
-    height: 12vh;
-    margin-bottom: 2%;
-    color: #1ba1db;
-    font-size: 300%;
-  } */
  
   
   h1{
@@ -265,8 +254,10 @@ html, body {
             visibility:hidden;
         }
     .topNav {
+          display: inline-flex;
+          /* justify-content:left; */
           width: 100%;
-          text-align: center;
+          text-align: left;
     }
   
     
@@ -275,8 +266,8 @@ html, body {
           /* background-color: transparent; */
           color: #fff;
           /* color:#1ba1db; */
-          font-weight: bold;
-          font-size: 100%;
+          font-weight:bold;
+          font-size: 70%;
           text-align: center;
           width: 9%;
           padding: 2px;
@@ -289,12 +280,12 @@ html, body {
           }
           
       .topNav a:active {
-              color: #031b1c !important;
+              color: #210f38 !important;
               border: 4px solid #60fbff;
           }
       .topNav a:hover {
-          color: #091824;
-          border: 4px solid #091824;
+          color: #210f38;
+          border: 4px solid #210f38;
       }
       .flex-container {
          flex-direction:row;

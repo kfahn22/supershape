@@ -2,10 +2,10 @@
 
  I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
-- [Superellipse challenge] https://thecodingtrain.com/challenges/19-superellipse
-- [2d Supershape challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
-- [Spherical geometry] https://thecodingtrain.com/challenges/25-spherical-geometry
-- [3d Supershape challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
+- [Superellipse Coding Challenge] https://thecodingtrain.com/challenges/19-superellipse
+- [2d Supershape Coding Challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
+- [Spherical geometry Coding Challenge] https://thecodingtrain.com/challenges/25-spherical-geometry
+- [3d Supershape Coding Challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
 
   Here are two more resources about supershapes:
 - [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
@@ -13,8 +13,7 @@
 
 ## I.  2D supershape generator rendered with a shader
 
-  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader must uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the code Daniel wrote in the original  p5js sketch and the shader is that we do not calculate vertices for the shader or add a mesh.  The colors rendered are based on the distance of the uv coordinates to the shape.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--uv.x and uv.y are analygous to the x and y coordinates. To calculate the angle to pass to the superformula, we use atan(uv.y, uv.x). 
-  If you would like to learn more about shaders, I recommend you read "The Book of Shaders" by Patricio Gonzalez Vivo and Jen Lowe.
+  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader must uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the code Daniel wrote in the original p5js sketch and the shader is that we do not calculate vertices for the shader or add a mesh.  The colors rendered are based on the distance of the uv coordinates to the boundary of the shape.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--uv.x and uv.y are analygous to the x and y coordinates. I have used the Spherical function from Daniel Shiffman's Mandelbulb Codig Challenge to calculate the angle to pass to the superformula (link below).  If you would like to learn more about shaders, I recommend you read "The Book of Shaders" by Patricio Gonzalez Vivo and Jen Lowe.
 
   - [Book of Shaders] https://thebookofshaders.com
 
