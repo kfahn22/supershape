@@ -1,4 +1,4 @@
-# 3D SUPER shapes
+# Supershapes
 
  I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
@@ -9,6 +9,17 @@
 
 [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
 [Paul Bourke webpage on supershapes] http://paulbourke.net/geometry/supershape/
+
+## 2D supershape generator rendered with a shader
+
+  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape coding challenge.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  One of the big differences between the regular p5.js sketch and the shader is that you need to tell the computer what color every pixel in the canvas should be.  YOu do this by passing a a matrix of numbers (values should be between 0.0 and 1.0) to the computer at the end of the frag file.  
+
+<img class="img" src="assets/2d_supershape.jpg" alt="Supershape" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
+<img class="img" src="assets/2d_supershape2.jpg" alt="Supershape" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="400" height="400">
 
 ## 3D supershape generator rendered with vertices and mesh
 
@@ -33,7 +44,7 @@
 
 ## 3D Supershape generator with a shader 
 
-  I have also rendered the supershape using a shader.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  The shader renders 3D shapes by ray-marching instead of rendering a mesh on vertices.  If you are not familar with ray-marching, here are some excellent resources.
+  I have also rendered the supershape using a shader.    The shader renders 3D shapes by ray-marching instead of rendering a mesh on vertices.  If you are not familar with ray-marching, here are some excellent resources.
 
  Inigo Quilez has done pioneering work on shaders and is the co-creator of shadertoy, which is another place you can write shaders. His website contains a wealth of information on shaders.
 
