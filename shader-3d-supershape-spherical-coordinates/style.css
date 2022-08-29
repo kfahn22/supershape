@@ -7,14 +7,29 @@ html, body {
 }
 canvas {
   display: block;
+  margin-right: 1em;
+  width: 60%;
 }
 /* p {
   margin-left: 1em;
 } */
+.global {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  
+}
+/* .top :nth-of-type(1) {flex-grow: 3;}
+.top :nth-of-type(2) {flex-grow: 1;} */
+
 .parameters {
   text-align: center;
   color: #000;
-  width: 35vw;
+  max-width: 400px;
+  width: 35%;
   margin-top: 0.25em;
   background-color: #c2c2c2;
   display: flex;
@@ -22,15 +37,15 @@ canvas {
   justify-content: center;
 }
 .color_parameters {
+  margin-top: 1em;
   text-align: center;
   color: #000;
-  width: 90vw;
+  max-width: 1250px;
+  width: 80%;
 /*   margin-top: 0.25em; */
   background-color: #c2c2c2;
   display: flex;
   flex-direction: column;
-  margin-left: 1em;
-  margin-right: 1em;
 }
 .box {
   width: 90%;
@@ -48,7 +63,7 @@ canvas {
   width: 90%;
   display: flex;
   flex-direction: row;
-/*   justify-content: center; */
+  justify-content: center;
   margin-left:auto;
   margin-right:auto;
 /*   margin-left: 1em; */
@@ -72,7 +87,7 @@ canvas {
 
 /* Styles the whole slider */
  .mySlider{
-  width: 80px;
+  width: 90%;
   background-color: transparent;
   
   /* Removes some defaults */

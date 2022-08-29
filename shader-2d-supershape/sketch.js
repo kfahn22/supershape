@@ -1,6 +1,5 @@
-// The supershape code is based on Daniel Shiffman's 3d-supershapes challenge
+// The supershape code is based on Daniel Shiffman's 2d-supershapes challenge
 // https://thecodingtrain.com/challenges/26-3d-supershapes
-// The shader code builds on work by Inigo Quilez and Martijn Steinrucken as detailed in the frag file
 
 let  divA, divB, divC;
 let redSlider, greenSlider, blueSlider;
@@ -18,21 +17,22 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 600, WEBGL);
+ let topDiv = createDiv().class('top');
+  createCanvas(800, 800, WEBGL).parent(topDiv);
   pixelDensity(1);
   noCursor();
   
   // Controls for supershape parameters
-  let divG = createDiv().position(650, 0).class('parameters');
+  //let divG = createDiv().position(625, 0).class('parameters');
+  let divG = createDiv().parent(topDiv).class('parameters');
   para1 = createP('Supershape parameters:').parent(divG);
   
   divA = createDiv().parent(divG).class('box');
  
   let divA1 = createDiv().parent(divA).class('slider');
   let spanr = createSpan("r: ").parent(divA1);
-  rSlider = createSlider(100, 400, 250).parent(divA1).style('width', '180px').class('mySlider');
+  rSlider = createSlider(1, 20, 10).parent(divA1).style('width', '180px').class('mySlider');
  
-  
   let divA2 = createDiv().parent(divA).class('slider');
   let spana = createSpan("a: ").parent(divA2);
   aSlider = createSlider(0, 2, 1, 0.1).parent(divA2).style('width', '180px').class('mySlider');
@@ -47,19 +47,20 @@ function setup() {
   let divB = createDiv().parent(divG).class('box');
   let divB1 = createDiv().parent(divB).class('slider');
   let spann1 = createSpan("n1: ").parent(divB1);
-  n1Slider = createSlider(0, 12, 1.7, 0.1).style('width', '180px').parent(divB1).class('mySlider');
+  n1Slider = createSlider(0, 12, 1.0, 0.1).style('width', '180px').parent(divB1).class('mySlider');
   
   let divB2= createDiv().parent(divB).class('slider');
   let spann2= createSpan("n2: ").parent(divB2);
-  n2Slider = createSlider(0, 12, 1.7, 0.1).style('width', '180px').parent(divB2).class('mySlider');
+  n2Slider = createSlider(0, 12, 1.0, 0.1).style('width', '180px').parent(divB2).class('mySlider');
  
   let divB3= createDiv().parent(divB).class('slider');
   let spann3 = createSpan("n3: ").parent(divB3);
-  n3Slider = createSlider(0, 12, 1.7, 0.1).style('width', '180px').parent(divB3).class('mySlider');
+  n3Slider = createSlider(0, 12, 1.0, 0.1).style('width', '180px').parent(divB3).class('mySlider');
   
-  divG1 = createDiv().position(20, 680).class('color_parameters');
-  colorP = createP('Choose colors:').parent(divG1);
-  divC = createDiv().parent(divG1).class('colors');
+  //let colorDiv = createDiv().parent('globalDiv').class('color_parameters');
+  let colorDiv = createDiv().class('color_parameters');
+  colorP = createP('Choose colors:').parent(colorDiv);
+  divC = createDiv().parent(colorDiv).class('colors');
   
   let divC1 = createDiv().parent(divC).class('slider');
   let spanred = createSpan("red: ").parent(divC1);
@@ -85,7 +86,7 @@ function draw() {
       let m = mSlider.value();
       let newM = map(m, 0, 12, 0.0, 12.0);
       let r = rSlider.value();
-      let newR = map(r, 100, 400, 0.0, 4.0);
+      let newR = map(r, 1, 20, 0.0, 2.0);
       
       let n1 = n1Slider.value();
       let newN1 = map(n1, 0, 12, 0.0, 12.0);

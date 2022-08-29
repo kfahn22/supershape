@@ -1,5 +1,8 @@
 // This file renders the supershape
 // The code for the superformula and supershape3D are based primarily on Daniel Shiffman's 3d Supershape Coding CHallenge
+// The code for the spherical coordinates is based on the one from 
+// Mandelbulb Coding Challenge by Daniel Shiffman 
+// https://www.youtube.com/watch?v=NJCiUVGiNyA
 
 // Base code based on the Ray Marching Starting Point from the Art of Code
 // https://www.youtube.com/watch?v=PGtv-dBi2wE
@@ -48,6 +51,15 @@ vec3 colorGradient(vec2 uv, vec3 col1, vec3 col2, float m) {
   return col;
 }  
 
+// Spherical function modified from Daniel Shiffman
+vec2 Spherical( vec2 pos) 
+{
+   float r = sqrt(pos.x*pos.x + pos.y*pos.y);
+   float theta = atan(pos.y, pos.x);
+   vec2 w = vec2(r, theta);
+   return w;
+}
+
 float superFormula(float theta) {
   float t1 = abs((1.0/aa) * cos(m * theta / 4.0));
   t1 = pow(t1, n2);
@@ -62,11 +74,11 @@ float superFormula(float theta) {
 
 float Supershape2D( vec2 uv ) {
   vec2 q;
-  float d = length(uv);
-  float angle = atan(uv.y, uv.x);
-  float radius = superFormula( angle );
-  q.x = rr * radius * cos(angle);
-  q.y = rr * radius * sin(angle);
+  float d = Spherical( uv ).x;
+  float theta = Spherical( uv ).y;
+  float radius = superFormula( theta );
+  q.x = rr * radius * cos(theta);
+  q.y = rr * radius * sin(theta);
   return d -= length(q); 
 }
 
