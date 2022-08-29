@@ -13,7 +13,7 @@
 
 ## I.  2D supershape generator rendered with a shader
 
-  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader must uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the code Daniel wrote in the original p5js sketch and the shader is that we do not calculate vertices for the shader or add a mesh.  The colors rendered are based on the distance of the uv coordinates to the boundary of the shape.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--uv.x and uv.y are analygous to the x and y coordinates. I have used the Spherical function from Daniel Shiffman's Mandelbulb Codig Challenge to calculate the angle to pass to the superformula (link below).  If you would like to learn more about shaders, I recommend you read "The Book of Shaders" by Patricio Gonzalez Vivo and Jen Lowe.
+  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the code Daniel wrote in the original p5js sketch and the shader is that we do not calculate vertices for the shader or add a mesh.  The colors rendered are based on the distance of the uv coordinates to the boundary of the shape.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--uv.x and uv.y are roughly analygous to the x and y coordinates. I have used the Spherical function from Daniel Shiffman's Mandelbulb Codig Challenge to calculate the angle to pass to the superformula (link below).  If you would like to learn more about shaders, I recommend you read "The Book of Shaders" by Patricio Gonzalez Vivo and Jen Lowe.
 
   - [Book of Shaders] https://thebookofshaders.com
 
@@ -141,7 +141,7 @@
 
 ## V. The Mandelbulb
 
-  What discussion of supershapes would be complete without the ultimate SUPER shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more about the mandelbulb and how it is constructed, I recommend watchig Daniel Shiffman's Mandelbulb Coding Challenge.
+  What discussion of supershapes would be complete without the ultimate 3D shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more about the mandelbulb and how it is constructed, I recommend watchig Daniel Shiffman's Mandelbulb Coding Challenge.
 
 -  [Mandelbulb Coding Challenge Challenge] https://thecodingtrain.com/challenges/168-the-mandelbulb
 
