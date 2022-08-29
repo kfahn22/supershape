@@ -119,17 +119,37 @@ vec2 sdKoch( vec2 uv) {
   uv /= scale;
   return uv;
 }
+
+//. Ported from Live Coding Bending Light tutorial by The Art of Code
+// https://www.youtube.com/watch?v=0RWaR7zApEo
+float dodecahedron( vec3 p) {
+    // Create rhombic dodecahedron
+    // get angle
+    float d;
+    float c = cos(3.1515/5.);
+    float s = sqrt(0.75-c*c);
+    
+    vec3 n = vec3(-.5, -c, s);  //standard fold
+    p = abs(p);
+    p -= 2.*min(0., dot(p, n))*n;
+    
+    
+    p.xy = abs(p.xy);
+    p -= 2.*min(0., dot(p, n))*n;
+     
+    p.xy = abs(p.xy);
+    p -= 2.*min(0., dot(p, n))*n;
+    
+    d = p.z-1.; // Make a plane (like a sheet of paper to fold)
+    return d;
+}
+
 // 3d SDFs from Inigo Quilez
 float sdBox(vec3 p, vec3 s) {
     p = abs(p)-s;
 	return length(max(p, 0.))+min(max(p.x, max(p.y, p.z)), 0.);
 }
 
-float sdTorus( vec3 p, vec2 t )
-{
-  vec2 q = vec2(length(p.xz)-t.x,p.y);
-  return length(q)-t.y;
-}
 
 float sdEllipsoid( vec3 p, vec3 r )
 {
@@ -199,7 +219,7 @@ float GetDist(vec3 p, float shape1, float shape2, float scale, float mv, float h
        d = max(d, abs(p.y) - h);
       // start with a star and mix with a box
     } else if (shape1 == 1.0 && shape2 == 1.0) {
-       d = sdStar(q.xz, r, 18, m );
+       d = sdStar(q.xz, r, nn, m );
        d = mix(d, sdBox(q, vec3(scale, h, scale)), mv) ;
        d = max(d, abs(p.y) - 0.15);
     } else if (shape1 == 2.0 && shape2 == 0.0) {
@@ -216,6 +236,16 @@ float GetDist(vec3 p, float shape1, float shape2, float scale, float mv, float h
     else if (shape1 == 3.0 && shape2 == 0.0) {
        d = sdKoch(q.xz).y;
         d = mix( d,  sdEllipsoid(q, vec3(scale, h, scale)), mv);
+    }
+    else if (shape1 == 0.0 && shape2 == 2.0) {
+        d = length(p) - scale;
+        d = mix(d, dodecahedron(q), mv);
+        //d = dodecahedron(q);
+    }
+    else if (shape1 == 1.0 && shape2 == 2.0) {
+        d = sdStar(q.xz, r, nn, m );
+        d = mix(d, dodecahedron(q), mv);
+        //d = dodecahedron(q);
     }
     return d;
 }
@@ -267,7 +297,7 @@ void main( )
     
     
     vec3 rd = GetRayDir(uv, ro, vec3(0,0.,0), 2.0);
-     col = colorGradient(uv,TEAL, ORANGE, 0.5);
+     col = colorGradient(uv, BLUE, PURPLE, 0.75);
     //col = TEAL;
   
      // Add a reflective background surface
