@@ -93,7 +93,7 @@ html, body {
   
   .images {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     padding: 1vh;
   }
 
