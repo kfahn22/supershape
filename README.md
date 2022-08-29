@@ -24,8 +24,8 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: 2d supershape] https://editor.p5js.org/kfahn/full/wSW1n0L3_
-- [Link to code] https://editor.p5js.org/kfahn/sketches/wSW1n0L3_
+- [Shader: 2d supershape] https://editor.p5js.org/kfahn/full/qbpp4fdzJ
+- [Link to code] https://editor.p5js.org/kfahn/sketches/qbpp4fdzJ
 
 ## II. 3D supershape generator rendered with vertices and mesh
 

@@ -22,13 +22,13 @@ html, body {
   p {
     margin-left: auto;
     margin-right: auto;
-    padding: 1vw;
+    /* padding: 1vw; */
     font-size:x-large;
     max-width: 90vw;;
   }
   
   div #intro {
-    width: 90vw;
+    width: 95vw;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -89,10 +89,10 @@ html, body {
   }
 
   iframe {
-    margin-top: 2vh;
+    margin-top: 1vh;
     width: 90vw;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    margin-left: 1vw;
+    /* margin-right: auto; */
   }
   
   a:link, a:visited {
