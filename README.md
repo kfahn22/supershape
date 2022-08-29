@@ -141,7 +141,7 @@
 
 ## V. The Mandelbulb
 
-  What discussion of super shapes would be complete without the ultimate SUPER shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more about the mandelbulb and how it is constructed, I recommend watchig Daniel Shiffman's Mandelbulb Coding Challenge.
+  What discussion of supershapes would be complete without the ultimate SUPER shape, the mandelbulb?  Here are a couple of images of the mandelbulb.  If you want to learn more about the mandelbulb and how it is constructed, I recommend watchig Daniel Shiffman's Mandelbulb Coding Challenge.
 
 -  [Mandelbulb Coding Challenge Challenge] https://thecodingtrain.com/challenges/168-the-mandelbulb
 
@@ -152,4 +152,6 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
+ - [Shader:  mandelbulb] https://editor.p5js.org/kfahn/full/xtZ6edhVi
+ - [Link to code] https://editor.p5js.org/kfahn/sketches/xtZ6edhVi
  - [Link to mandelbulb repo] https://github.com/kfahn22/mandelbulb
