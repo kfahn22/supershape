@@ -24,6 +24,7 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
+- [Link to live version] https://kfahn22.github.io/supershape/2d_supershape.html
 - [Shader: 2d supershape] https://editor.p5js.org/kfahn/full/qbpp4fdzJ
 - [Link to code] https://editor.p5js.org/kfahn/sketches/qbpp4fdzJ
 
@@ -76,7 +77,7 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Live version] https://kfahn22.github.io/supershape/supershape_shader.html
+- [Live version] https://kfahn22.github.io/supershape/supershape_spherical_coord.html
 - [Shader: supershape w/ spherical coordinates] https://editor.p5js.org/kfahn/full/pNgfhTXfN
 - [Link to code] https://editor.p5js.org/kfahn/sketches/pNgfhTXfN
 
