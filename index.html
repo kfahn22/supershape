@@ -19,7 +19,7 @@
 
 <body>
 	<header id="index">
-		<h1>Rendering 3D Shapes in p5.js</h1>
+		<h1>Supershapes in p5.js</h1>
 		<nav id="myNavBar">
 			<div class="overlay" id="myNav">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -35,7 +35,7 @@
 			</div>
 
 			<div class="topNav">
-				<a href="index.html" class="active" id="a0">Home</a>
+				<!-- <a href="index.html" class="active" id="a0">Home</a> -->
 				<!-- <a href="about.html">About</a> -->
 				<a href="2d_supershape.html">2D Supershapes</a>
 				<a href="supershape.html">Supershapes I</a>
@@ -44,6 +44,7 @@
 				<a href="rotation.html">Rotations</a>
 				<a href="mixture.html">Mixing Shapes</a>
 				<a href="extrusion.html">Extrusions</a>
+				<a href="mandelbulb.html">Mandelbulb</a>
 			</div>
 
 			<!-- Use any element to open/show the overlay navigation menu-->
@@ -59,15 +60,25 @@
 			</div>
 			<div id="intro">
 				<p>
-					This website contains the p5.js sketches I have written to render SUPER shapes in p5.js using
-					several different approaches. The first several
-					are based on Daniel Shiffman's <a href="https://thecodingtrain.com/challenges/26-3d-supershapes">3D
-						supershape Coding Challenge</a> and use the supershape formula. The
-					The mixture, rotation, and extrusion sketches use shaders and are based on the work of <a
+					This website contains the p5.js sketches I have written to render supershapes in p5.js using
+					several different approaches. I became interested in supershapes after watching some Coding Challenges on supershapes
+					by <a href="https://thecodingtrain.com/challenges">Daniel Shiffman</a>.  
+					The mixture, rotation, and extrusion sketches use shaders and are based on the work of The Art of Code<a
 						href="https://iquilezles.org">Inigo Quilez</a> and
 					<a href="https://www.youtube.com/c/TheArtofCodeIsCool">Martijn Steinrucken</a>. You will see that
 					you can obtain some very unique 3D shapes using both
 					approaches!
+
+					The 2D supershape sketch is a port of the code written by Daniel Shiffman in his <a href="https://thecodingtrain.com/challenges/23-2d-supershapes">2d Supershape Coding Challenge</a>.  
+					Supershape I is a port to a shader of Daniel Shiffman's code from the <a href="https://thecodingtrain.com/challenges/26-3d-supershapes">3D
+						supershape Coding Challenge</a>  Supershape II is a port of his code to a shader, using the Spherical function from the Mandelbrot Coding Challenge to determine theta.  Supershape III is a 
+					hybrid method, where the 2D supershape is rotated  on the x, y and z axes and then the boolean intersection taken.  This method was 
+					described by Martiyn Steinrucken in his tutorial on how to turn a 2D fractal into a 3D fractal. 
+					
+					I have also included some other 3D shapes created using different methods.  The mixture sketch uses the mix function 
+					to combine a 2D SDF with a 3D shape.  You can get some very interesting shapes with this technique.  The extrusion method is akin to pushing 
+					playdough through a mold.  The majority of the 2D SDFs and the extrusion function are from Inigo Quilez.  Lastly, I have included the Mandelbulb 
+					because it is just amazing.  
 				</p>
 
 				<div class="images">
