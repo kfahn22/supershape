@@ -24,14 +24,14 @@ html, body {
     margin-right: auto;
     padding: 1vw;
     font-size:x-large;
-    max-width: 80vw;;
+    max-width: 90vw;;
   }
   
-  /* div #intro {
-    width: 45vw;
+  div #intro {
+    width: 90vw;
     margin-top: auto;
     margin-bottom: auto;
-  } */
+  }
   
   
   li {
@@ -77,12 +77,13 @@ html, body {
   }
   
   .tile {
-    max-width: 120px;
+    max-width: 200px;
   }
   
   .images {
     display: flex;
     flex-direction:row;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 1vh;
   }
@@ -95,7 +96,7 @@ html, body {
   }
   
   a:link, a:visited {
-    color:#70327E;
+    color:#361660;
     /* background-color: #fff; */
     padding: 5px 10px;
     text-align: center;

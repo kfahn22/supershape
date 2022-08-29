@@ -24,8 +24,8 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: 2d supershape] https://editor.p5js.org/kfahn/full/elmDMZyY_
-- [Link to code] https://editor.p5js.org/kfahn/sketches/elmDMZyY_
+- [Shader: 2d supershape] https://editor.p5js.org/kfahn/full/wSW1n0L3_
+- [Link to code] https://editor.p5js.org/kfahn/sketches/wSW1n0L3_
 
 ## II. 3D supershape generator rendered with vertices and mesh
 
@@ -84,7 +84,7 @@
 
  ### 1. Rotation method 
 
-  In his tutorial "How to turn your 2d fractal into 3d!", the clever and creative Martijn Steinrucken created a 3D Koch shape by rotating the fractal on all three axes and then taking the boolean intersection. You can do something similar with a 2D signed distance functions (SDF), which essentially calculate the distance from the surface of the shape to the center of the screen. I have used this technique to create a variant of the 3D supershape.  Again, it is possible to enter parameters that violate the SDF and lead to distortions in the rendering. 
+  In his tutorial "How to turn your 2d fractal into 3d!", the clever and creative Martijn Steinrucken created a 3D Koch shape by rotating the fractal on all three axes and then taking the boolean intersection. You can do something similar with a 2D signed distance functions (SDF), which essentially calculate the distance from the surface of the shape to the center of the screen. I have used this technique to create a hybrid of the 3D supershape. Again, it is possible to enter parameters that violate the SDF and lead to distortions in the rendering. 
 
   [How to turn your 2d fractal into 3d!] https://www.youtube.com/watch?v=__dSLc7-Cpo
 
@@ -95,7 +95,7 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: Supershape w/ rotations] https://editor.p5js.org/kfahn/full/eWeMOTKqz
+- [Shader: "Supershape" w/ rotations] https://editor.p5js.org/kfahn/full/eWeMOTKqz
 - [Link to code] -- https://editor.p5js.org/kfahn/sketches/eWeMOTKqz
 
   I have also created some 3D shapes using other 2D shapes.  The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
