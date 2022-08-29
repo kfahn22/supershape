@@ -7,12 +7,13 @@
 - [Spherical geometry] https://thecodingtrain.com/challenges/25-spherical-geometry
 - [3d Supershape challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
 
-[Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
-[Paul Bourke webpage on supershapes] http://paulbourke.net/geometry/supershape/
+  Here are two more resources about supershapes:
+- [Wikipedia page on supershapes] https://en.wikipedia.org/wiki/Superformula
+- [Paul Bourke webpage on supershapes] http://paulbourke.net/geometry/supershape/
 
 ## 2D supershape generator rendered with a shader
 
-  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape coding challenge.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  One of the big differences between the regular p5.js sketch and the shader is that you need to tell the computer what color every pixel in the canvas should be.  You do this by passing a a matrix of numbers (values should be between 0.0 and 1.0) to the computer at the end of the frag file. the big adjustment in the code is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--you can think of uv.x as the x coordinate and uv.y as the y coordinate.  To calculate the angle to pass to the superformula, we use atan(uv.y, uv.x). 
+  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader must uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the regular p5 sketch and the shader is that we do not calculate vertices for the shader.  The colors rendered are based on the distance to center of the canvas.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--you can think of uv.x as the x coordinate and uv.y as the y coordinate. To calculate the angle to pass to the superformula, we use atan(uv.y, uv.x). 
 
 <img class="img" src="assets/2d_supershape.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
@@ -20,6 +21,9 @@
 <img class="img" src="assets/2d_supershape2.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
+
+- [Link to p5sketch] https://editor.p5js.org/kfahn/full/elmDMZyY_
+- [Link to code] https://editor.p5js.org/kfahn/sketches/elmDMZyY_
 
 ## 3D supershape generator rendered with vertices and mesh
 
@@ -39,8 +43,8 @@
     margin-right: auto;" width="400" height="400">
 
 - [Live version] https://kfahn22.github.io/supershape/supershape.html
-- [Supershape P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
-- [Link to Code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
+- [P5.js sketch] https://editor.p5js.org/kfahn/full/LvvD5bLu7
+- [Link to code] https://editor.p5js.org/kfahn/sketches/LvvD5bLu7
 
 ## 3D Supershape generator with a shader 
 
