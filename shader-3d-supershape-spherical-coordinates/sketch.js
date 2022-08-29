@@ -17,12 +17,16 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 600, WEBGL);
+ // let globalDiv = createDiv().class('global');
+  //let topDiv = createDiv().class('top').parent(globalDiv);
+  let topDiv = createDiv().class('top');
+  let can = createCanvas(800, 800, WEBGL).parent(topDiv);
   pixelDensity(1);
   noCursor();
   
   // Controls for supershape parameters
-  let divG = createDiv().position(650, 0).class('parameters');
+  //let divG = createDiv().position(625, 0).class('parameters');
+  let divG = createDiv().parent(topDiv).class('parameters');
   para1 = createP('Supershape parameters:').parent(divG);
   
   divA = createDiv().parent(divG).class('box');
@@ -56,9 +60,10 @@ function setup() {
   let spann3 = createSpan("n3: ").parent(divB3);
   n3Slider = createSlider(0, 12, 1.7, 0.1).style('width', '180px').parent(divB3).class('mySlider');
   
-  divG1 = createDiv().position(20, 680).class('color_parameters');
-  colorP = createP('Choose colors:').parent(divG1);
-  divC = createDiv().parent(divG1).class('colors');
+  //let colorDiv = createDiv().parent('globalDiv').class('color_parameters');
+  let colorDiv = createDiv().class('color_parameters');
+  colorP = createP('Choose colors:').parent(colorDiv);
+  divC = createDiv().parent(colorDiv).class('colors');
   
   let divC1 = createDiv().parent(divC).class('slider');
   let spanred = createSpan("red: ").parent(divC1);
