@@ -94,6 +94,7 @@ html, body {
   .images {
     display: flex;
     flex-direction:row;
+    flex-wrap: wrap;
     padding: 1vh;
   }
 
