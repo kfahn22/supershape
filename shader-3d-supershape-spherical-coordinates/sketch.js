@@ -1,6 +1,5 @@
 // The supershape code is based on Daniel Shiffman's 3d-supershapes challenge
 // https://thecodingtrain.com/challenges/26-3d-supershapes
-// The shader code builds on work by Inigo Quilez and Martijn Steinrucken as detailed in the frag file
 
 let  divA, divB, divC;
 let redSlider, greenSlider, blueSlider;

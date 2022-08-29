@@ -1,5 +1,11 @@
-// This file renders the supershape
+/ This file renders the supershape
 // The code for the superformula and supershape3D are based primarily on Daniel Shiffman's 3d Supershape Coding CHallenge
+
+// The code for the spherical coordinates is based on the one from 
+// Mandelbulb Coding Challenge by Daniel Shiffman 
+// https://www.youtube.com/watch?v=NJCiUVGiNyA
+// Exploration of how to port from Shadertoy to P5.js
+// https://www.youtube.com/watch?v=7ZIfXu_iPv4
 
 // Base code based on the Ray Marching Starting Point from the Art of Code
 // https://www.youtube.com/watch?v=PGtv-dBi2wE
@@ -20,7 +26,6 @@ uniform vec2 u_resolution;
 uniform float iTime;
 uniform vec2 iMouse;
 uniform float iFrame;
-uniform sampler2D tex0;
 
 // supershape parameters
 uniform float aa;
@@ -70,6 +75,18 @@ mat2 Rot(float a) {
     return mat2(c, -s, s, c);
 }
 
+// Spherical function from Daniel Shiffman
+// I modified the function to change theta bsed on code from https://www.shadertoy.com/view/4llGWM
+vec3 Spherical( vec3 pos) 
+{
+   float r = sqrt(pos.x*pos.x + pos.y*pos.y + pos.z*pos.z);
+  // float theta = atan( sqrt(pos.x*pos.x + pos.y*pos.y), pos.z);
+   float theta =pos.z/r;
+   float phi = atan(pos.y, pos.x);
+   vec3 w = vec3(r, theta, phi);
+   return w;
+}
+
 float superFormula(float theta, float  m, float n1, float n2, float n3) {
   float t1 = abs((1.0/aa) * cos(m * theta / 4.0));
   t1 = pow(t1, n2);
@@ -83,21 +100,18 @@ float superFormula(float theta, float  m, float n1, float n2, float n3) {
 }
 
 float Supershape3D( vec3 p, float rr, float m, float n1, float n2, float n3 ) {
-
-  // Code for angles from https://www.shadertoy.com/view/4llGWM
-  float d = length(p);//the distance to the center of the shape
-  float sn = p.z/d;//the sine of rho (the angle between z and xy)
-  float angle1 = atan(p.y,p.x);
-  float angle2 = asin(sn);
-  float r1 = superFormula(angle1, m, n1, n2, n3 );
-  float r2 = superFormula(angle2, m, n1, n2, n3 );
-  float d1 = rr * r1 * cos(angle1) * r2 * cos(angle2);
-  float d2 = rr * r1 * sin(angle1) * r2 * cos(angle2);
-  float d3 = rr * r2 * sin(angle2) ;
+  float r = Spherical( p ).x;
+  float theta = Spherical( p ).y;
+  float phi = Spherical( p ).z;
+  float r1 = superFormula(phi, m, n1, n2, n3 );
+  float r2 = superFormula(theta, m, n1, n2, n3 );
+  float d1 = rr * r1 * cos(phi) * r2 * cos(theta);
+  float d2 = rr * r1 * sin(phi) * r2 * cos(theta);
+  float d3 = rr * r2 * sin(theta) ;
   vec3 q = vec3(d1, d2, d3);
-  return d -= length(q);
+  return r -= length(q);
   
-}
+ }
 
 /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
@@ -105,7 +119,6 @@ float Supershape3D( vec3 p, float rr, float m, float n1, float n2, float n3 ) {
 float GetDist(  vec3 p ) {
   return Supershape3D( p, rr, m, n1, n2, n3);
 }
-
 
 // Both methods are the same from this point on
 float RayMarch(vec3 ro, vec3 rd) {
