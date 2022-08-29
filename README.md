@@ -12,7 +12,7 @@
 
 ## 2D supershape generator rendered with a shader
 
-  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape coding challenge.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  One of the big differences between the regular p5.js sketch and the shader is that you need to tell the computer what color every pixel in the canvas should be.  YOu do this by passing a a matrix of numbers (values should be between 0.0 and 1.0) to the computer at the end of the frag file.  
+  This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape coding challenge.  To do this in p5.js, you must load a frag file.  It utilizes the GPU, so the rendering is very fast.  One of the big differences between the regular p5.js sketch and the shader is that you need to tell the computer what color every pixel in the canvas should be.  You do this by passing a a matrix of numbers (values should be between 0.0 and 1.0) to the computer at the end of the frag file. the big adjustment in the code is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--you can think of uv.x as the x coordinate and uv.y as the y coordinate.  To calculate the angle to pass to the superformula, we use atan(uv.y, uv.x). 
 
 <img class="img" src="assets/2d_supershape.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
