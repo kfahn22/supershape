@@ -2,7 +2,7 @@
 
  I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
-- [Superellipse Coding Challenge] https://thecodingtrain.com/challenges/19-superellipse
+- [Superellipse Coding Challenge] (https://thecodingtrain.com/challenges/19-superellipse)
 - [2d Supershape Coding Challenge] https://thecodingtrain.com/challenges/23-2d-supershapes
 - [Spherical geometry Coding Challenge] https://thecodingtrain.com/challenges/25-spherical-geometry
 - [3d Supershape Coding Challenge] https://thecodingtrain.com/challenges/26-3d-supershapes
@@ -136,7 +136,7 @@
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader -- Extrusion] https://editor.p5js.org/kfahn/full/6W1gXtNUi
+- [Shader -- Extrusion] (https://editor.p5js.org/kfahn/full/6W1gXtNUi)
 - [Link to code] https://editor.p5js.org/kfahn/sketches/6W1gXtNUi
 
 ## V. The Mandelbulb
