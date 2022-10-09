@@ -97,10 +97,10 @@ Here are two more resources about supershapes:
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: "Supershape" w/ rotations](https://editor.p5js.org/kfahn/full/eWeMOTKqz)
+- [Shader: "Supershape" with rotations](https://editor.p5js.org/kfahn/full/eWeMOTKqz)
 - [Link to code](https://editor.p5js.org/kfahn/sketches/eWeMOTKqz)
 
-  I have also created some 3D shapes using other 2D shapes.  The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
+I have also created some 3D shapes using other 2D shapes.  The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
 
 <img class="img" src="assets/hexagram.jpg" alt="3D Hexagram" style=" display: block;
     margin-left: auto;
