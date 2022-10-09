@@ -15,7 +15,7 @@
 
   This sketch utilizes the code that Daniel Shiffman wrote in his 2d Supershape Coding Challenge.  I have rendered the supershape with a shader.  To do this in p5.js, you must load a shader (a vert file and a frag file) in the sketch.js file.  The shader uses WEBGL, which utilizes the GPU so the rendering is very fast.  The big difference between the code Daniel wrote in the original p5js sketch and the shader is that we do not calculate vertices for the shader or add a mesh.  The colors rendered are based on the distance of the uv coordinates to the boundary of the shape.  Another big difference is the way you iterate through the coordinates.  Instead of having a loop, you pass the uv coordinates to the function--uv.x and uv.y are roughly analygous to the x and y coordinates. I have used the Spherical function from Daniel Shiffman's Mandelbulb Codig Challenge to calculate the angle to pass to the superformula (link below).  If you would like to learn more about shaders, I recommend you read "The Book of Shaders" by Patricio Gonzalez Vivo and Jen Lowe.
 
-  - [Book of Shaders] https://thebookofshaders.com
+  - [Book of Shaders](https://thebookofshaders.com)
 
 <img class="img" src="assets/2d_supershape.jpg" alt="Supershape" style=" display: block;
     margin-left: auto;
@@ -68,7 +68,7 @@
  Jamie Wong has a great article on Ray Marching and Signed Distance Functions.
  - [Ray Marching and Signed Distance Functions](http://jamie-wong.com/2016/07/15/ray-marching-signed-distance-functions/)
 
- Images of supershape rendered with a shader.  Fair warning:  one thing you will soon find out if use the generator is that it is possible to enter parameters that violate the SDF and lead to distortions in the rendering. 
+ Images of a supershape rendered with a shader.  Fair warning:  one thing you will soon find out if use the generator is that it is possible to enter parameters that violate the SDF and lead to distortions in the rendering. 
 
  <img class="img" src="assets/sh_super1.jpg" alt="Supershape rendered with a shader" style=" display: block;
     margin-left: auto;
