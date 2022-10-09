@@ -1,6 +1,6 @@
 # Supershapes
 
- I became interested in supershapes after watching several of Daniel Shiffman's Coding Train Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
+ I became interested in supershapes after watching several of Daniel Shiffman's [Coding Train](https://thecodingtrain.com) Challenges on supershapes.  The supershape is a generalization of the superellipse, and was proposed by Johan Gielis.  The 3D version is an extension using spherical coordinates.  The supershape formula is really complex.  Luckily, you don't have to completely understand the formula to use it to create some really fun shapes, although watching Daniel Shiffman's Coding Challenge videos will certainly help.
 
 - [Superellipse Coding Challenge](https://thecodingtrain.com/challenges/19-superellipse)
 - [2d Supershape Coding Challenge](https://thecodingtrain.com/challenges/23-2d-supershapes)
