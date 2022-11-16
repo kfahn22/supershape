@@ -1,4 +1,4 @@
-/ This file renders the supershape
+// This file renders the supershape
 // The code for the superformula and supershape3D are based primarily on Daniel Shiffman's 3d Supershape Coding CHallenge
 
 // The code for the spherical coordinates is based on the one from 
