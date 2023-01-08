@@ -112,6 +112,10 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
 - [Shader: other shapes w/ rotations](https://editor.p5js.org/kfahn/full/bveKzyp2D)
 - [Link to code](https://editor.p5js.org/kfahn/sketches/bveKzyp2D)
 
+![](GIFS/rotation.gif)
+
+- [Animation](https://editor.p5js.org/kfahn/sketches/IwIreTuJ0)
+
 ### * Mixing two different shapes
 
   In this method, we start with a 2D shape and mix by a percentage with a 3D shape.  Suppose you have always wondered, what would happen if you mixed a star with a circle?  Now you can find out (image on left).  What about mixing the Koch curve and a box?  Believe it or not, you can do that too (image on right).
