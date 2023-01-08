@@ -112,6 +112,8 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
 - [Shader: other shapes w/ rotations](https://editor.p5js.org/kfahn/full/bveKzyp2D)
 - [Link to code](https://editor.p5js.org/kfahn/sketches/bveKzyp2D)
 
+### Animation rendered using the new saveGif() function and varying supershape parameter m by time
+
 ![](GIFS/rotation.gif)
 
 - [Animation](https://editor.p5js.org/kfahn/sketches/PDf5c9dyU)
