@@ -26,8 +26,8 @@ Here are two more resources about supershapes:
     margin-right: auto;" width="400" height="400">
 
 - [Link to live version](https://kfahn22.github.io/supershape/2d_supershape.html)
-- [Shader: 2d supershape](https://editor.p5js.org/kfahn/full/qbpp4fdzJ)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/qbpp4fdzJ)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/qbpp4fdzJ)
+- [Code](https://github.com/kfahn22/supershape/tree/main/shader-2d-supershape)
 
 ## 3D supershape generator rendered with vertices and mesh
 
@@ -47,8 +47,8 @@ Here are two more resources about supershapes:
     margin-right: auto;" width="400" height="400">
 
 - [Live version](https://kfahn22.github.io/supershape/supershape.html)
-- [Supershape: vertices & mesh](https://editor.p5js.org/kfahn/full/LvvD5bLu7)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/LvvD5bLu7)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/LvvD5bLu7)
+- [Code](https://github.com/kfahn22/supershape/tree/main/mesh-supershape)
 
 ## 3D Supershape generator with a shader 
 
@@ -79,8 +79,8 @@ Here are two more resources about supershapes:
     margin-right: auto;" width="400" height="400">
 
 - [Live version](https://kfahn22.github.io/supershape/supershape_spherical_coord.html)
-- [Shader: supershape w/ spherical coordinates](https://editor.p5js.org/kfahn/full/pNgfhTXfN)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/pNgfhTXfN)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/pNgfhTXfN)
+- [Code](https://github.com/kfahn22/supershape/tree/main/shader-3d-supershape-spherical-coordinates)
 
  ## SUPER shapes rendered with a shader using other methods
 
@@ -97,8 +97,8 @@ Here are two more resources about supershapes:
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: "Supershape" with rotations](https://editor.p5js.org/kfahn/full/eWeMOTKqz)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/eWeMOTKqz)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/eWeMOTKqz)
+- [Code](https://editor.p5js.org/kfahn/sketches/eWeMOTKqz)
 
 I have also created some 3D shapes using other 2D shapes.  The image on the left shows a 3D hexagram, while the image on the right shows a 3D star.  (The 2D SDFs are from Inigo Quilez and are available on his website.)
 
@@ -109,14 +109,15 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader: other shapes w/ rotations](https://editor.p5js.org/kfahn/full/bveKzyp2D)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/bveKzyp2D)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/bveKzyp2D)
+- [Code](https://editor.p5js.org/kfahn/sketches/bveKzyp2D)
 
 ### Animation rendered using the new saveGif() function and varying supershape parameter m by time
 
 ![](GIFS/rotation.gif)
 
-- [Animation](https://editor.p5js.org/kfahn/sketches/PDf5c9dyU)
+- [P5 sketch](https://editor.p5js.org/kfahn/sketches/PDf5c9dyU)
+- [Code](https://github.com/kfahn22/supershape/tree/main/animation)
 
 ### * Mixing two different shapes
 
@@ -129,8 +130,8 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader -- Mixing Two Shapes](https://editor.p5js.org/kfahn/full/ox3GdxXTJ)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/ox3GdxXTJ)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/ox3GdxXTJ)
+- [Code](https://github.com/kfahn22/supershape/tree/main/shader-mixing-shapes)
 
 ### * Extrusions
 
@@ -143,8 +144,8 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
-- [Shader -- Extrusion](https://editor.p5js.org/kfahn/full/6W1gXtNUi)
-- [Link to code](https://editor.p5js.org/kfahn/sketches/6W1gXtNUi)
+- [P5 sketch](https://editor.p5js.org/kfahn/full/6W1gXtNUi)
+- [Code](https://github.com/kfahn22/supershape/tree/main/shader-extrusion)
 
 ## The Mandelbulb
 
@@ -159,6 +160,6 @@ I have also created some 3D shapes using other 2D shapes.  The image on the left
     margin-left: auto;
     margin-right: auto;" width="400" height="400">
 
- - [Shader:  mandelbulb](https://editor.p5js.org/kfahn/full/xtZ6edhVi)
- - [Link to code](https://editor.p5js.org/kfahn/sketches/xtZ6edhVi)
- - [Link to mandelbulb repo](https://github.com/kfahn22/mandelbulb)
+ - [P5 sketch](https://editor.p5js.org/kfahn/full/xtZ6edhVi)
+ - [Code](https://github.com/kfahn22/mandelbulb/tree/main/different_color_options)
+ - [Mandelbulb repo](https://github.com/kfahn22/mandelbulb)
